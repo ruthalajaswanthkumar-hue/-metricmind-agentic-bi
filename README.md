@@ -3,7 +3,7 @@
 > Enterprise-grade AI-powered Business Intelligence System  
 > Axlero Solutions Internship Project (Project 1)
 
----
+ 
 
 ##  Project Overview
 
@@ -22,7 +22,7 @@ The system intelligently:
 - Explains the results
 - Displays interactive charts
 
----
+ 
 
 ##  Project Objectives
 
