@@ -93,11 +93,11 @@ metricmind-agentic-bi/
 
 ---
 
-#  Team
+#  Team Details
 
 ## Team Lead
 
-**Ruthala Jaswanth Kumar**
+**RUTHALA JASWANTH KUMAR**
 
 ## Team Members
 
