@@ -1,4 +1,4 @@
- # 🚀 MetricMind – Agentic Semantic BI Engine
+ #  MetricMind – Agentic Semantic BI Engine
 
 > **An Enterprise Conversational Business Intelligence Platform powered by AI**
 
@@ -22,7 +22,7 @@ The AI Agent understands the business context, converts the request into optimiz
 
 ---
 
-# 🎯 Project Objectives
+# Project Objectives
 
 - Build an AI-powered Conversational BI platform
 - Convert Natural Language into SQL
@@ -33,7 +33,7 @@ The AI Agent understands the business context, converts the request into optimiz
 
 ---
 
-# 🏗️ System Architecture
+#  System Architecture
 
 ```
                 User
@@ -96,7 +96,7 @@ The AI Agent understands the business context, converts the request into optimiz
 
 ---
 
-# 📂 Repository Structure
+#  Repository Structure
 
 ```
 METRICMIND-agentic-bi
@@ -131,7 +131,7 @@ METRICMIND-agentic-bi
 
 ---
 
-# 👥 Team Members
+# Team Members
 
 | Role | Member |
 |------|--------|
@@ -144,34 +144,34 @@ METRICMIND-agentic-bi
 
 ---
 
-# 📌 Module Responsibilities
+#  Module Responsibilities
 
-### 🎨 Frontend
+###  Frontend
 - User Interface
 - Dashboard
 - Charts
 - Chat UI
 - Authentication
 
-### ⚙️ Backend
+###  Backend
 - REST APIs
 - Database Integration
 - Authentication
 - Business Logic
 
-### 🤖 AI Agent
+###  AI Agent
 - Prompt Engineering
 - LangChain
 - Llama Integration
 - SQL Generation
 
-### 📊 Semantic Layer
+###  Semantic Layer
 - Business Metrics
 - Dimensions
 - Cube.dev
 - dbt Models
 
-### 🗄️ Database
+###  Database
 - ER Diagram
 - SQL Schema
 - Snowflake
@@ -199,16 +199,16 @@ All changes must be submitted through **Pull Requests** before merging into `dev
 
 ---
 
-# 📅 Development Status
+#  Development Status
 
 | Module | Status |
 |---------|--------|
-| Repository Setup | ✅ Completed |
-| Frontend Setup | 🚧 In Progress |
-| Backend Setup | 🚧 In Progress |
-| AI Agent | 🚧 In Progress |
-| Semantic Layer | 🚧 In Progress |
-| Database Design | 🚧 In Progress |
+| Repository Setup |  Completed |
+| Frontend Setup |  In Progress |
+| Backend Setup |  In Progress |
+| AI Agent |  In Progress |
+| Semantic Layer |  In Progress |
+| Database Design |  In Progress |
 
 ---
 
