@@ -10,7 +10,7 @@
 
 ---
 
-# 📖 Project Overview
+#  Project Overview
 
 **MetricMind** is an enterprise-grade **Agentic Semantic Business Intelligence (BI) Engine** that allows business users to ask questions in natural language and receive accurate analytics, visualizations, and business insights.
 
