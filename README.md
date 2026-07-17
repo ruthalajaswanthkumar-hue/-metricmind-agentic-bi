@@ -135,12 +135,12 @@ METRICMIND-agentic-bi
 
 | Role | Member |
 |------|--------|
-| 👨‍💻 Team Lead | **Ruthala Jaswanth Kumar** |
-| 🎨 Frontend Developer | Preksha Acharya |
-| ⚙️ Backend Developer | Farhana Shaik |
-| 🤖 AI Engineer | Vanshika |
-| 📊 Semantic Layer Engineer | SREERAJ K |
-| 🗄️ Database & Documentation | Neelum Nithusha |
+|  Team Lead AND Analytics Engine & Dashboard Intelligence | **Ruthala Jaswanth Kumar** |
+|  Frontend Developer | Preksha Acharya |
+|  Backend Developer | Farhana Shaik |
+|  AI Engineer | Vanshika |
+|  Semantic Layer Engineer | SREERAJ K |
+|  Database & Documentation | Neelum Nithusha |
 
 ---
 
@@ -179,7 +179,7 @@ METRICMIND-agentic-bi
 
 ---
 
-# 🌿 Git Workflow
+#  Git Workflow
 
 Every team member works on their own feature branch.
 
@@ -212,7 +212,7 @@ All changes must be submitted through **Pull Requests** before merging into `dev
 
 ---
 
-# 📋 Development Rules
+#  Development Rules
 
 - Create a separate branch for your assigned module.
 - Commit your work daily.
@@ -223,7 +223,7 @@ All changes must be submitted through **Pull Requests** before merging into `dev
 
 ---
 
-# 🎯 Expected Deliverables
+#  Expected Deliverables
 
 - AI Chat Interface
 - Semantic Layer
@@ -235,7 +235,7 @@ All changes must be submitted through **Pull Requests** before merging into `dev
 
 ---
 
-# 📄 License
+#  License
 
 This project is developed as part of the **Axlero Solutions Advanced Data Analytics Internship Program**.
 
