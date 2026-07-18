@@ -1,14 +1,47 @@
-
-"""
+ """
+MetricMind Analytics Engine
 Dashboard KPI Definitions
 """
 
-dashboard_metrics = {
-    "Revenue": "Total income generated from sales.",
-    "Profit": "Revenue minus total cost.",
-    "Orders": "Total number of completed orders.",
-    "Customers": "Total number of unique customers.",
-    "Sales": "Total sales transactions.",
-    "Growth": "Percentage increase over previous period.",
-    "Margin": "Profit percentage after costs."
-}
+class DashboardMetrics:
+
+    KPIS = {
+        "Revenue": {
+            "formula": "SUM(sales_amount)",
+            "description": "Total revenue generated from sales"
+        },
+
+        "Profit": {
+            "formula": "Revenue - Cost",
+            "description": "Net profit earned"
+        },
+
+        "Orders": {
+            "formula": "COUNT(order_id)",
+            "description": "Total completed orders"
+        },
+
+        "Customers": {
+            "formula": "COUNT(DISTINCT customer_id)",
+            "description": "Unique customers"
+        },
+
+        "Average Order Value": {
+            "formula": "Revenue / Orders",
+            "description": "Average revenue per order"
+        },
+
+        "Growth": {
+            "formula": "(Current - Previous) / Previous *100",
+            "description": "Business growth percentage"
+        },
+
+        "Margin": {
+            "formula": "(Profit / Revenue) *100",
+            "description": "Profit Margin"
+        }
+    }
+
+    @classmethod
+    def get_metrics(cls):
+        return cls.KPIS
