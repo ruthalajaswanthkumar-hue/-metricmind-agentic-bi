@@ -61,7 +61,7 @@ The AI Agent understands the business context, converts the request into optimiz
 
 ---
 
-# 🛠 Tech Stack
+#  Tech Stack
 
 ## Frontend
 - Next.js
