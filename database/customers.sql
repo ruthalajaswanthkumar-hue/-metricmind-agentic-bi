@@ -1,17 +1,6 @@
-CREATE TABLE Customers (
-    CustomerID INT PRIMARY KEY AUTO_INCREMENT,
-    CustomerName VARCHAR(100) NOT NULL,
-    Email VARCHAR(100) UNIQUE,
-    Phone VARCHAR(20),
-    Address VARCHAR(255),
-    RegionID INT NOT NULL,
-
-    CONSTRAINT fk_customer_region
-      FOREIGN KEY (RegionID)
-      REFERENCES Regions(RegionID)
-
+CREATE TABLE customers(
+    customer_id TEXT PRIMARY KEY,
+    customer_name TEXT,
+    region TEXT,
+    city TEXT
 );
-
-
-CREATE INDEX idx_customer_region
-ON Customers(RegionID);
