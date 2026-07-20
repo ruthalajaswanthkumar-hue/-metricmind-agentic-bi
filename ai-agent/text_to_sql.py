@@ -1,6 +1,5 @@
 from pathlib import Path
 from langchain_ollama import OllamaLLM
-
 BASE_DIR = Path(__file__).parent
 prompt_path = BASE_DIR / "prompts" / "sql_prompt.txt"
 
