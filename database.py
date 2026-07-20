@@ -1,6 +1,8 @@
-from sqlalchemy import create_engine
-from backend.config.settings import DATABASE_URL
+ from sqlalchemy import create_engine
 
-engine = create_engine(DATABASE_URL)
+DATABASE_URL = "sqlite:///metricmind.db"
 
-print("Database Engine Created Successfully")
+engine = create_engine(
+    DATABASE_URL,
+    echo=True
+)
