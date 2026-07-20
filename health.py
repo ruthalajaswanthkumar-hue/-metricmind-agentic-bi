@@ -1,9 +1,18 @@
-from pydantic import BaseModel
+ from fastapi import APIRouter
 
+# Create a router
+router = APIRouter()
 
-class HealthResponse(BaseModel):
-    status: str
+# Home API
+@router.get("/")
+def root():
+    return {
+        "message": "MetricMind Backend Running"
+    }
 
-
-class RootResponse(BaseModel):
-    message: str
+# Health Check API
+@router.get("/health")
+def health():
+    return {
+        "status": "Running"
+    }
