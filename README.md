@@ -1,114 +1,119 @@
  #  MetricMind – Agentic Semantic BI Engine
 
-> **An Enterprise Conversational Business Intelligence Platform powered by AI**
+> **Enterprise-grade AI-powered Conversational Business Intelligence Platform**
 
 ![Status](https://img.shields.io/badge/Status-Development-orange)
 ![Team](https://img.shields.io/badge/Team-6%20Members-blue)
-![Framework](https://img.shields.io/badge/Frontend-Next.js-black)
+![Frontend](https://img.shields.io/badge/Frontend-Next.js-black)
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-green)
 ![AI](https://img.shields.io/badge/AI-LangChain%20%7C%20Llama-red)
+![Database](https://img.shields.io/badge/Database-Snowflake-blue)
+![License](https://img.shields.io/badge/Internship-Axlero%20Solutions-success)
 
 ---
 
 #  Project Overview
 
-**MetricMind** is an enterprise-grade **Agentic Semantic Business Intelligence (BI) Engine** that allows business users to ask questions in natural language and receive accurate analytics, visualizations, and business insights.
+**MetricMind** is an Enterprise AI-powered Business Intelligence (BI) platform that enables business users to ask questions in natural language and instantly receive accurate analytics, visualizations, and business insights.
 
-Instead of writing SQL queries, users can simply ask:
+Instead of writing SQL queries manually, users can simply ask:
 
-> *"Why did European sales decrease last quarter?"*
+> **"Why did European sales decrease last quarter?"**
 
-The AI Agent understands the business context, converts the request into optimized SQL, retrieves data from the data warehouse, and generates interactive dashboards with meaningful explanations.
+MetricMind intelligently:
+
+-  Understands the business question
+-  Converts Natural Language into SQL
+-  Uses a Semantic Layer for governed metrics
+-  Retrieves data from Snowflake
+-  Generates interactive dashboards
+-  Provides AI-generated business insights
 
 ---
 
-# Project Objectives
+#  Project Objectives
 
-- Build an AI-powered Conversational BI platform
-- Convert Natural Language into SQL
-- Create a Semantic Layer for governed business metrics
-- Generate interactive visualizations
-- Provide trustworthy business insights
-- Deliver enterprise-grade dashboard experience
+- Build an AI-powered Conversational BI Platform
+- Convert Natural Language → SQL
+- Create an Enterprise Semantic Layer
+- Generate Interactive Visualizations
+- Provide Explainable Business Insights
+- Deliver Enterprise Dashboard Experience
+- Build a Modular & Scalable Architecture
 
 ---
 
 #  System Architecture
 
-```
-                User
-                  │
-                  ▼
-         Next.js Frontend
-                  │
-                  ▼
-            FastAPI Backend
-                  │
-      ┌───────────┴───────────┐
-      ▼                       ▼
- LangChain Agent         Semantic Layer
-      │                       │
-      ▼                       ▼
-     Llama               Cube.dev / dbt
-      │                       │
-      └───────────┬───────────┘
-                  ▼
-             Snowflake Database
-                  │
-                  ▼
-          Business Analytics
+```text
+                        User
+                          │
+                          ▼
+                 Next.js Frontend
+                          │
+                          ▼
+                  FastAPI Backend
+                          │
+                          ▼
+             AI Agent (LangChain + Llama)
+                          │
+                          ▼
+          Semantic Layer (dbt + Cube.dev)
+                          │
+                          ▼
+             Snowflake Data Warehouse
+                          │
+                          ▼
+      Analytics Engine & Dashboard Intelligence
+          ├── KPI Generator
+          ├── Metric Processor
+          ├── Business Rule Engine
+          ├── Trend Analyzer
+          ├── Insight Generator
+          ├── Chart Selector
+          └── Response Formatter
+                          │
+                          ▼
+      Interactive Dashboard & Business Insights
 ```
 
 ---
 
 #  Tech Stack
 
-## Frontend
-- Next.js
-- TypeScript
-- Tailwind CSS
-- React
-- Recharts
-- Framer Motion
-
-## Backend
-- FastAPI
-- Python
-- SQLAlchemy
-- Pydantic
-
-## Artificial Intelligence
-- LangChain
-- Llama 3
-- Ollama
-
-## Semantic Layer
-- Cube.dev
-- dbt
-
-## Database
-- Snowflake
-- SQL
-
-## Version Control
-- Git
-- GitHub
+| Category | Technology |
+|----------|------------|
+| Frontend | Next.js, React, TypeScript, Tailwind CSS |
+| Backend | FastAPI, Python, SQLAlchemy, Pydantic |
+| AI | LangChain, Llama 3, Ollama |
+| Semantic Layer | dbt, Cube.dev |
+| Analytics Engine | Python, Pandas, NumPy |
+| Database | Snowflake, SQL |
+| Charts | Recharts |
+| Version Control | Git & GitHub |
 
 ---
 
 #  Repository Structure
 
-```
-METRICMIND-agentic-bi
+```text
+METRICMIND-agentic-bi/
 │
-├── src/                    # Frontend Source Code
-├── public/                 # Static Assets
+├── frontend/                 # Next.js Application
 │
-├── backend/                # FastAPI Backend
+├── backend/                  # FastAPI APIs
 │
-├── ai-agent/               # LangChain + Llama
+├── ai-agent/                 # LangChain + Llama
 │
-├── semantic-layer/         # Cube.dev & dbt
+├── semantic-layer/           # dbt & Cube.dev
+│
+├── analytics-engine/
+│   ├── metrics/
+│   ├── processors/
+│   ├── insights/
+│   ├── charts/
+│   ├── rules/
+│   └── formatter/
 │
 ├── database/
 │   ├── schema/
@@ -116,6 +121,8 @@ METRICMIND-agentic-bi
 │   ├── queries/
 │   ├── views/
 │   └── er-diagram/
+│
+├── visualization/
 │
 ├── docs/
 │   ├── Architecture.md
@@ -131,59 +138,128 @@ METRICMIND-agentic-bi
 
 ---
 
-# Team Members
+#  Team Members
 
 | Role | Member |
 |------|--------|
-|  Team Lead AND Analytics Engine & Dashboard Intelligence | **Ruthala Jaswanth Kumar** |
+|  Team Lead | **Ruthala Jaswanth Kumar** |
+|  Analytics Engine & Dashboard Intelligence | **Ruthala Jaswanth Kumar** |
 |  Frontend Developer | Preksha Acharya |
 |  Backend Developer | Farhana Shaik |
 |  AI Engineer | Vanshika |
-|  Semantic Layer Engineer | SREERAJ K |
+|  Semantic Layer Engineer | Sreeraj K |
 |  Database & Documentation | Neelum Nithusha |
 
 ---
 
 #  Module Responsibilities
 
-###  Frontend
-- User Interface
-- Dashboard
+##  Frontend
+
+- Landing Page
+- Login Page
+- Dashboard UI
+- Chat Interface
+- KPI Cards
 - Charts
-- Chat UI
 - Authentication
 
-###  Backend
+---
+
+##  Backend
+
 - REST APIs
-- Database Integration
-- Authentication
 - Business Logic
+- Database Connectivity
+- Authentication
+- Error Handling
+- Logging
+- API Documentation
 
-###  AI Agent
+---
+
+##  AI Agent
+
 - Prompt Engineering
-- LangChain
+- LangChain Integration
 - Llama Integration
+- Natural Language Understanding
 - SQL Generation
 
-###  Semantic Layer
+---
+
+##  Semantic Layer
+
 - Business Metrics
 - Dimensions
-- Cube.dev
+- Cube.dev Models
 - dbt Models
+- Metric Governance
 
-###  Database
+---
+
+##  Database
+
 - ER Diagram
 - SQL Schema
-- Snowflake
-- Documentation
+- Data Warehouse
+- Snowflake Integration
+- Sample Datasets
+
+---
+
+##  Analytics Engine & Dashboard Intelligence
+
+The Analytics Engine transforms raw SQL results into meaningful business insights.
+
+Responsibilities:
+
+- KPI Calculation
+- Business Rule Processing
+- Trend Analysis
+- Insight Generation
+- Chart Recommendation
+- Dashboard Intelligence
+- Metric Processing
+- Executive Summary Generation
+- Response Formatting
+
+---
+
+#  Analytics Engine Workflow
+
+```text
+SQL Result
+      │
+      ▼
+Metric Processor
+      │
+      ▼
+Business Rule Engine
+      │
+      ▼
+Insight Generator
+      │
+      ▼
+Chart Selector
+      │
+      ▼
+Response Formatter
+      │
+      ▼
+Dashboard JSON
+      │
+      ▼
+Frontend Dashboard
+```
 
 ---
 
 #  Git Workflow
 
-Every team member works on their own feature branch.
+Every developer works in a separate feature branch.
 
-```
+```text
 main
 │
 ├── develop
@@ -192,10 +268,11 @@ main
 ├── feature/backend
 ├── feature/ai-agent
 ├── feature/semantic-layer
-└── feature/database
+├── feature/database
+└── feature/analytics-engine
 ```
 
-All changes must be submitted through **Pull Requests** before merging into `develop` or `main`.
+All code must be submitted through **Pull Requests** before merging.
 
 ---
 
@@ -204,180 +281,62 @@ All changes must be submitted through **Pull Requests** before merging into `dev
 | Module | Status |
 |---------|--------|
 | Repository Setup |  Completed |
-| Frontend Setup |  In Progress |
-| Backend Setup |  In Progress |
+| Frontend |  In Progress |
+| Backend |  In Progress |
 | AI Agent |  In Progress |
 | Semantic Layer |  In Progress |
-| Database Design |  In Progress |
+| Database |  In Progress |
+| Analytics Engine |  In Progress |
 
 ---
 
 #  Development Rules
 
 - Create a separate branch for your assigned module.
-- Commit your work daily.
+- Commit work every day.
 - Use meaningful commit messages.
-- Push changes before 10:00 PM every day.
-- Never push directly to the `main` branch.
+- Push before **10:00 PM**.
+- Never push directly to `main`.
+- Submit Pull Requests for review.
 - Update documentation whenever new features are added.
+- Follow project folder structure.
 
 ---
 
 #  Expected Deliverables
 
 - AI Chat Interface
+- Natural Language → SQL
 - Semantic Layer
-- SQL Generator
-- Business Dashboard
-- Interactive Charts
 - Snowflake Integration
-- Enterprise Analytics Platform
+- Analytics Engine
+- KPI Recommendation Engine
+- Business Rule Engine
+- Dashboard Intelligence
+- Interactive Charts
+- Executive Business Insights
+- Enterprise Dashboard
 
 ---
 
-#  License
+#  Future Scope
 
-This project is developed as part of the **Axlero Solutions Advanced Data Analytics Internship Program**.
+Future improvements planned for MetricMind include:
 
-© 2026 Axlero Solutions Internship Team.
-#  MetricMind – Agentic Semantic BI Engine
-
-> Enterprise-grade AI-powered Business Intelligence System  
-> Axlero Solutions Internship Project (Project 1)
-
- 
-
-##  Project Overview
-
-MetricMind is an AI-powered Business Intelligence (BI) platform that allows users to ask business questions in natural language and receive accurate insights, SQL-generated results, and interactive visualizations.
-
-Instead of writing SQL manually, users can ask questions such as:
-
-> "Why did European sales drop last quarter?"
-
-The system intelligently:
-
-- Understands the business question
-- Uses a Semantic Layer for governed metrics
-- Generates optimized SQL
-- Retrieves data from the warehouse
-- Explains the results
-- Displays interactive charts
-
- 
-
-##  Project Objectives
-
-- Build an Agentic AI-powered BI assistant
-- Implement a governed Semantic Layer
-- Convert Natural Language → SQL
-- Generate business insights with AI
-- Display interactive dashboards and charts
+- Predictive Analytics
+- AI Forecasting
+- Anomaly Detection
+- Voice-Based BI Assistant
+- Role-Based Access Control
+- Multi-Language Support
+- Auto KPI Recommendations
+- Real-Time Dashboard Updates
+- AI Executive Reports
+- Smart Dashboard Personalization
 
 ---
 
-#  System Architecture
-
-```
-User
-   │
-   ▼
-Frontend (Next.js)
-   │
-   ▼
-Backend (FastAPI)
-   │
-   ▼
-AI Agent (LangChain + Llama)
-   │
-   ▼
-Semantic Layer (dbt + Cube.dev)
-   │
-   ▼
-Database / Warehouse
-   │
-   ▼
-Business Insights & Charts
-```
-
----
-
-#  Tech Stack
-
-| Category | Technology |
-|----------|------------|
-| Frontend | Next.js |
-| Backend | FastAPI |
-| AI Framework | LangChain |
-| LLM | Llama |
-| Semantic Layer | dbt, Cube.dev |
-| Data Warehouse | Snowflake |
-| Database | SQL |
-| Version Control | Git & GitHub |
-
----
-
-#  Repository Structure
-
-```
-metricmind-agentic-bi/
-│
-├── frontend/
-├── backend/
-├── ai-agent/
-├── semantic-layer/
-├── database/
-├── visualization/
-├── docs/
-├── assets/
-└── README.md
-```
-
----
-
-#  Team Details
-
-## Team Lead
-
-**RUTHALA JASWANTH KUMAR**
-
-## Team Members
-
-- Preksha Acharya
-- Sreeraj K
-- Vanshika
-- Neelum Nithusha
-- Farhana Shaik
-
----
-
-#  Current Status
-
- Phase 1 – Project Planning & Repository Setup
-
-Current Tasks:
-
-- Repository Setup
-- Team Collaboration
-- Project Architecture
-- Requirement Analysis
-- Module Distribution
-
----
-
-#  Upcoming Milestones
-
-- Frontend Development
-- Backend APIs
-- AI Agent Development
-- Semantic Layer Integration
-- Database Integration
-- Interactive Visualizations
-- Final Deployment
-
----
-
-##  Internship
+#  Internship Information
 
 **Organization:** Axlero Solutions
 
@@ -387,6 +346,14 @@ Current Tasks:
 
 ---
 
-## ⭐ Project Vision
+#  Project Vision
 
-Build a production-ready conversational Business Intelligence platform that enables business users to obtain accurate insights using natural language while ensuring governance, explainability, and scalability.
+To build a **production-ready AI-powered Conversational Business Intelligence Platform** that enables business users to obtain accurate, explainable, and actionable insights using natural language while ensuring governance, scalability, and enterprise-grade performance.
+
+---
+
+# 📄 License
+
+This project is developed as part of the **Axlero Solutions Advanced Data Analytics Internship Program**.
+
+© 2026 Axlero Solutions Internship Team
