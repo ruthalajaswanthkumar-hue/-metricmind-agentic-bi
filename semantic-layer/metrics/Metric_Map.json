@@ -1,0 +1,6 @@
+{
+  "Revenue": "Sales.SalesAmount",
+  "Profit": "Sales.Profit",
+  "Orders": "COUNT(OrderID)",
+  "Customers": "COUNT(CustomerID)"
+}
