@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from backend.config.config import APP_NAME, VERSION
 from backend.database.database import engine
 from backend.api.health import router as health_router
+from backend.api.chat import router as chat_router
 
 app = FastAPI(
     title=APP_NAME,
@@ -11,3 +12,4 @@ app = FastAPI(
 )
 
 app.include_router(health_router)
+app.include_router(chat_router)
