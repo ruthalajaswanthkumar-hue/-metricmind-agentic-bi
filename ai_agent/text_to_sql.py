@@ -5,8 +5,11 @@ prompt_path = BASE_DIR / "prompts" / "sql_prompt.txt"
 
 with open(prompt_path, "r", encoding="utf-8") as file:
     sql_prompt = file.read()
-
-llm = OllamaLLM(model="llama3:latest")
+    
+llm = OllamaLLM(
+    model="llama3:latest",
+    base_url="http://127.0.0.1:11434"
+)
 
 
 def generate_sql(question):
