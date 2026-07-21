@@ -11,4 +11,6 @@ FROM {{ source('raw', 'Sales') }}
 
 WHERE OrderID IS NOT NULL
   AND ProductID IS NOT NULL
+  AND Quantity IS NOT NULL
+  AND UnitPrice IS NOT NULL
   AND SalesAmount IS NOT NULL;
