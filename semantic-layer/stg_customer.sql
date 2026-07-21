@@ -7,4 +7,6 @@ SELECT DISTINCT
 FROM {{ source('raw', 'Customers') }}
 
 WHERE CustomerID IS NOT NULL
-  AND CustomerName IS NOT NULL;
+  AND CustomerName IS NOT NULL
+  AND Region IS NOT NULL
+  AND City IS NOT NULL;
