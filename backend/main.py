@@ -1,16 +1,21 @@
-
 from fastapi import FastAPI
+from pydantic import BaseModel
 
-from backend.config.config import APP_NAME, VERSION
-from backend.database.database import engine
-from backend.api.health import router as health_router
-from backend.api.chat import router as chat_router
+from ai_agent.text_to_sql import generate_sql
 
-app = FastAPI(
-    title=APP_NAME,
-    version=VERSION,
-    description="Backend APIs for MetricMind AI Platform"
-)
+app = FastAPI()
 
-app.include_router(health_router)
-app.include_router(chat_router)
+
+class ChatRequest(BaseModel):
+    question: str
+
+
+@app.post("/chat")
+def chat(request: ChatRequest):
+
+    sql = generate_sql(request.question)
+
+    return {
+        "question": request.question,
+        "generated_sql": sql
+    }
