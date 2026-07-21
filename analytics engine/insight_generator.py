@@ -1,16 +1,24 @@
-
+ """
+Insight Generator
+Generates business insights from KPI and trend data.
 """
-Business Insight Generator
-"""
 
-sample_insights = [
+class InsightGenerator:
 
-    "Revenue increased compared to last month.",
+    @staticmethod
+    def generate(kpi_name, current_value, previous_value):
 
-    "South Region generated the highest sales.",
+        if previous_value == 0:
+            return f"No previous data available for {kpi_name}."
 
-    "Electronics is the best performing category.",
+        change = current_value - previous_value
+        percentage = round((change / previous_value) * 100, 2)
 
-    "Customer growth is improving steadily."
+        if change > 0:
+            return f"{kpi_name} increased by {percentage}% compared to the previous period."
 
-]
+        elif change < 0:
+            return f"{kpi_name} decreased by {abs(percentage)}% compared to the previous period."
+
+        else:
+            return f"{kpi_name} remained unchanged."
