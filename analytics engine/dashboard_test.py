@@ -1,18 +1,23 @@
-
 """
 Dashboard Engine Test
+Tests the complete Analytics Pipeline.
 """
 
-from dashboard_engine import DashboardEngine
+from analytics_pipeline import AnalyticsPipeline
 
+# Sample Business Data
 sample_data = {
     "Revenue": 500000,
     "Profit": 120000,
     "Orders": 350,
-    "Customers": 200
+    "Customers": 220
 }
 
-dashboard = DashboardEngine.dashboard_summary(sample_data)
+# Create Analytics Pipeline
+pipeline = AnalyticsPipeline()
 
-print("Dashboard Summary")
+# Generate Dashboard
+dashboard = pipeline.generate_dashboard(sample_data)
+
+# Print Result
 print(dashboard)
