@@ -1,13 +1,15 @@
-
-"""
+ """
 Chart Service
-Provides data for dashboard charts.
+Provides chart data for dashboard visualization.
 """
 
 class ChartService:
 
     @staticmethod
     def get_bar_chart():
+
+        # TODO:
+        # Replace with database query
 
         return [
             {"month": "Jan", "value": 120},
@@ -19,6 +21,9 @@ class ChartService:
     @staticmethod
     def get_line_chart():
 
+        # TODO:
+        # Replace with database query
+
         return [
             {"month": "Jan", "revenue": 50000},
             {"month": "Feb", "revenue": 65000},
@@ -29,17 +34,20 @@ class ChartService:
     @staticmethod
     def get_pie_chart():
 
+        # TODO:
+        # Replace with database query
+
         return [
             {"name": "Electronics", "value": 45},
             {"name": "Furniture", "value": 30},
             {"name": "Clothing", "value": 25}
         ]
 
-    @staticmethod
-    def get_all_charts():
+    @classmethod
+    def get_all_charts(cls):
 
         return {
-            "bar": ChartService.get_bar_chart(),
-            "line": ChartService.get_line_chart(),
-            "pie": ChartService.get_pie_chart()
+            "bar": cls.get_bar_chart(),
+            "line": cls.get_line_chart(),
+            "pie": cls.get_pie_chart()
         }
