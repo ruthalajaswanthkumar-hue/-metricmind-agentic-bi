@@ -1,4 +1,4 @@
- """
+"""
 Insight Generator
 Generates business insights from KPI and trend data.
 """
@@ -22,3 +22,19 @@ class InsightGenerator:
 
         else:
             return f"{kpi_name} remained unchanged."
+
+    @staticmethod
+    def region_insight(region):
+        return f"{region} region generated the highest revenue."
+
+    @staticmethod
+    def customer_insight(customers):
+        return f"Total active customers: {customers}."
+
+    @staticmethod
+    def order_insight(orders):
+        return f"Total orders processed: {orders}."
+
+    @staticmethod
+    def recommendation():
+        return "Continue monitoring KPIs and optimize low-performing business areas."
