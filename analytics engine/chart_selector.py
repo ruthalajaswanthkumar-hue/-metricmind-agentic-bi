@@ -1,4 +1,4 @@
- """
+"""
 MetricMind Analytics Engine
 Chart Recommendation Module
 """
@@ -13,7 +13,12 @@ class ChartSelector:
         "Growth": "Area Chart",
         "Orders": "Bar Chart",
         "Region": "Horizontal Bar Chart",
-        "Category": "Donut Chart"
+        "Category": "Donut Chart",
+        "Profit Margin": "Gauge Chart",
+        "Average Order Value": "KPI Card",
+        "Top Products": "Horizontal Bar Chart",
+        "Monthly Sales": "Line Chart",
+        "Yearly Sales": "Column Chart"
     }
 
     @classmethod
@@ -22,4 +27,12 @@ class ChartSelector:
 
     @classmethod
     def supported_charts(cls):
-        return list(set(cls.CHART_MAPPING.values()))
+        return sorted(list(set(cls.CHART_MAPPING.values())))
+
+    @classmethod
+    def is_supported_metric(cls, metric):
+        return metric in cls.CHART_MAPPING
+
+    @classmethod
+    def get_all_metrics(cls):
+        return list(cls.CHART_MAPPING.keys())
