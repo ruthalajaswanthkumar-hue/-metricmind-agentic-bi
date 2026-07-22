@@ -1,5 +1,8 @@
+ from pydantic import BaseModel
+from typing import List, Dict, Any
 
-from pydantic import BaseModel
 
-class ErrorResponse(BaseModel):
-    error: str
+class ChartResponse(BaseModel):
+    bar: List[Dict[str, Any]]
+    line: List[Dict[str, Any]]
+    pie: List[Dict[str, Any]]
