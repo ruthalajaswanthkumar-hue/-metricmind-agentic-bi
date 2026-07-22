@@ -1,1 +1,12 @@
 
+{
+  "Revenue": 500000,
+  "Profit": 120000,
+  "Orders": 350,
+  "Customers": 220,
+  "Region": "South",
+  "Category": "Electronics",
+  "Top Product": "Laptop",
+  "Growth": 12.5,
+  "Average Order Value": 1428.57
+}
