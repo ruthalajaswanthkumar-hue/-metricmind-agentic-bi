@@ -1,16 +1,3 @@
-"""
-Analytics Pipeline
-Coordinates the complete Analytics Engine.
-"""
-
-from kpi_calculator import KPICalculator
-from trend_analyzer import TrendAnalyzer
-from insight_generator import InsightGenerator
-from recommendation_engine import RecommendationEngine
-from chart_selector import ChartSelector
-from response_formatter import ResponseFormatter
-
-
 class AnalyticsPipeline:
 
     def __init__(self):
@@ -33,6 +20,18 @@ class AnalyticsPipeline:
         }
 
         # Analyze Trends
+
+        revenue_trend = TrendAnalyzer.analyze(revenue, 450000)
+        profit_trend = TrendAnalyzer.analyze(profit, 100000)
+        orders_trend = TrendAnalyzer.analyze(orders, 300)
+        customers_trend = TrendAnalyzer.analyze(customers, 200)
+
+        trends = {
+            "Revenue": revenue_trend,
+            "Profit": profit_trend,
+            "Orders": orders_trend,
+            "Customers": customers_trend
+        }
 
         # Generate Insights
 
