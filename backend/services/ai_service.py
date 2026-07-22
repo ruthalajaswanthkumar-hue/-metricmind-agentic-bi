@@ -25,5 +25,8 @@ SQL:
 """
 
         sql = self.llm.invoke(prompt)
+        sql = sql.replace("```sql", "")
+        sql = sql.replace("```", "")
+        sql = sql.strip()
 
         return sql.strip()
