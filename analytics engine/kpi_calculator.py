@@ -49,3 +49,5 @@ class KPICalculator:
             return 0
 
         return round(((current - previous) / previous) * 100, 2)
+  def calculate_revenue(data):
+    return "Calculates total revenue"   
