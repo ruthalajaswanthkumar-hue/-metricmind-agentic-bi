@@ -1,0 +1,5 @@
+2026-07-22 15:52:34,594 | INFO | Question Received: Show all companies
+2026-07-22 15:52:45,142 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-22 15:52:45,388 | INFO | Generated SQL: SELECT *
+FROM companies;
+2026-07-22 15:52:45,396 | INFO | Execution Time: 10.80 seconds
