@@ -9,7 +9,7 @@ This module acts as the bridge between the AI Agent, Semantic Layer, and Fronten
 
 ---
 
-## Responsibilities
+ ## Responsibilities
 
 - Process business metrics
 - Generate Key Performance Indicators (KPIs)
