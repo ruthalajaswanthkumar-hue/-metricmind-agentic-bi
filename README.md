@@ -145,7 +145,7 @@ METRICMIND-agentic-bi/
 |  Team Lead | **Ruthala Jaswanth Kumar** |
 |  Analytics Engine & Dashboard Intelligence | **Ruthala Jaswanth Kumar** |
 |  Frontend Developer |  Neelum Nithusha|
-|  Backend Developer |  Sreeraj K |
+|  Backend Developer |   |
 |  AI Engineer | Vanshika |
 |  Semantic Layer Engineer |  |
 |  Database & Documentation | Neelum Nithusha |
