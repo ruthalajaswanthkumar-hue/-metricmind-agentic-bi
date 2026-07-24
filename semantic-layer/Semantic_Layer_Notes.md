@@ -137,6 +137,13 @@ Metric\
 Analyzed using Dimensions
 
 ------------------------------------------------------------------------
+Validation Layer
+
+Before sending SQL,
+all metrics are validated.
+
+Invalid data returns an error.
+****
 
 # Conclusion
 
