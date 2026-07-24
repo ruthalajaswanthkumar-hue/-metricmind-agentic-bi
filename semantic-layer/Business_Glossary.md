@@ -317,6 +317,15 @@ Growth is used in:
 - Business Expansion Planning
 
 ---
+## Metric Dictionary
+
+Revenue → Sales, Income, Turnover
+
+Profit → Earnings
+
+Orders → Purchases
+
+Customers → Client, Buyer
 
 # Summary Table
 
