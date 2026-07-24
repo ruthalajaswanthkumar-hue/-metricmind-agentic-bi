@@ -1,1 +1,31 @@
 
+{
+    "Revenue": {
+        "type": "number",
+        "minimum": 0
+    },
+
+    "Profit": {
+        "type": "number"
+    },
+
+    "Orders": {
+        "type": "integer",
+        "minimum": 0
+    },
+
+    "Customers": {
+        "type": "string",
+        "required": true
+    },
+
+    "Profit Margin": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+    },
+
+    "Date": {
+        "type": "date"
+    }
+}
