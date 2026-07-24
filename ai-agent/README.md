@@ -1,5 +1,5 @@
 
-# 🤖 MetricMind AI Agent
+#  MetricMind AI Agent
 
 ## Overview
 
