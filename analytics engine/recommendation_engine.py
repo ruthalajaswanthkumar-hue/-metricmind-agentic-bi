@@ -1,7 +1,7 @@
 
 """
 Recommendation Engine
-Generates business recommendations based on KPI and trend analysis.
+Generates business recommendations based on KPI and trend analysis
 """
 
 class RecommendationEngine:
