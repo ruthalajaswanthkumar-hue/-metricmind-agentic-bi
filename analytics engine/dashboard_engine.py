@@ -1,7 +1,16 @@
  """
 Dashboard Intelligence Engine
 """
+from analytics_pipeline import AnalyticsPipeline
+dashboard_summary(data)
+pipeline = AnalyticsPipeline()
+return dashboard
+return {
+    "dashboard": dashboard,
+    "analytics": analytics
+}
 
+analytics = pipeline.generate_dashboard(data)
 class DashboardEngine:
 
     @staticmethod
