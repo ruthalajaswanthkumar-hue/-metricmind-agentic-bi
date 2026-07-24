@@ -8,7 +8,7 @@
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-green)
 ![AI](https://img.shields.io/badge/AI-LangChain%20%7C%20Llama-red)
 ![Database](https://img.shields.io/badge/Database-Snowflake-blue)
-![License](https://img.shields.io/badge/Internship-Axlero%20Solutions-success)
+![License](https://img.shields.io/badge/Internship-Axlero%20Solutions-success
 
 ---
 
