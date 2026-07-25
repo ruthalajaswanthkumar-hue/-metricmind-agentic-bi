@@ -7,7 +7,6 @@ import time
 
 router = APIRouter()
 
-from backend.schemas.chat import ChatRequest
 
 @router.post("/chat")
 def chat(request: ChatRequest):
