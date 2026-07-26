@@ -3,15 +3,9 @@ from langchain_ollama import OllamaLLM
 
 class AIService:
 
-    def __init__(self):
+    MODEL_NAME = "llama3:latest"
 
-        self.llm = OllamaLLM(
-            model="llama3:latest"
-        )
-
-    def generate_sql(self, question: str):
-
-        prompt = f"""
+    PROMPT_TEMPLATE = """
 You are a SQL Expert.
 
 Convert the following question into SQL.
@@ -24,9 +18,18 @@ Question:
 SQL:
 """
 
-        sql = self.llm.invoke(prompt)
-        sql = sql.replace("```sql", "")
-        sql = sql.replace("```", "")
-        sql = sql.strip()
+    def __init__(self):
+        self.llm = OllamaLLM(model=self.MODEL_NAME)
 
-        return sql.strip()
+    def generate_sql(self, question: str):
+        prompt = self.PROMPT_TEMPLATE.format(question=question)
+
+        sql = self.llm.invoke(prompt)
+
+        sql = (
+            sql.replace("```sql", "")
+               .replace("```", "")
+               .strip()
+        )
+
+        return sql

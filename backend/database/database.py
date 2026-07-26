@@ -1,8 +1,13 @@
 from sqlalchemy import create_engine
+
 from backend.config.config import DATABASE_URL
+from backend.utils.logger import logger
 
-print(f"DATABASE_URL = {DATABASE_URL}")
+logger.info("Creating database engine...")
 
-engine = create_engine(DATABASE_URL)
+engine = create_engine(
+    DATABASE_URL,
+    pool_pre_ping=True
+)
 
-print("Database Engine Created Successfully")
+logger.info("Database engine created successfully.")
