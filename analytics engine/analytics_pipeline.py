@@ -7,7 +7,7 @@ def generate_dashboard(self, data):
     orders = KPICalculator.calculate_orders(data)
     customers = KPICalculator.calculate_customers(data)
 
-    kpis = {
+    kpis= {
         "Revenue": revenue,
         "Profit": profit,
         "Orders": orders,
