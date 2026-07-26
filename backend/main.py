@@ -1,19 +1,37 @@
 from fastapi import FastAPI
-from backend.api.health import router as health_router
-from backend.api.chat import router as chat_router
-from backend.api.charts import router as charts_router
+from pydantic import BaseModel
 
-app = FastAPI(
-    title="MetricMind Backend API",
-    version="1.0.0"
-)
+from ai_agent.text_to_sql import generate_sql
+from ai_agent.insight_generator import generate_insight
+from ai_agent.recommendation_engine import generate_recommendation
+from ai_agent.chart_recommender import recommend_chart
 
-app.include_router(health_router)
-app.include_router(chat_router)
-app.include_router(charts_router)
+app = FastAPI()
 
-@app.get("/")
-def root():
+class ChatRequest(BaseModel):
+    question: str
+
+
+@app.post("/chat")
+def chat(request: ChatRequest):
+
+    sql = generate_sql(request.question)
+
+    # Mock database result
+    sample_data = {
+        "revenue": 250000,
+        "growth": "15%",
+        "region": "North"
+    }
+
+    insight = generate_insight(sample_data)
+    recommendation = generate_recommendation(sample_data)
+    chart = recommend_chart(request.question)
+
     return {
-        "message": "MetricMind Backend Running Successfully!"
+        "question": request.question,
+        "generated_sql": sql,
+        "chart": chart,
+        "insight": insight,
+        "recommendation": recommendation
     }
