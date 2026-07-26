@@ -1,4 +1,26 @@
  #  MetricMind – Agentic Semantic BI Engine
+ 
+Microsoft Teams meeting
+
+
+Join on your computer, mobile app or room device
+
+Click
+ here to join the meeting 
+
+Meeting ID:
+935 240 079 897 
+Passcode: dG7e2o
+
+Download
+ Teams | 
+Join on the web
+
+
+Learn more
+ | 
+Meeting options 
+
 
 > **Enterprise-grade AI-powered Conversational Business Intelligence Platform**
 
