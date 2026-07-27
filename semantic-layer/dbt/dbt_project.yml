@@ -1,1 +1,11 @@
 
+name: metricmind_semantic
+
+version: 1.0
+
+config-version: 2
+
+profile: metricmind
+
+model-paths:
+  - models
