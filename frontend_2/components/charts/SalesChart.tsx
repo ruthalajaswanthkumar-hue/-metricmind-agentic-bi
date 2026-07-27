@@ -5,30 +5,41 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
+  CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
 
-interface RevenueChartProps {
+interface SalesChartProps {
   data: {
     month: string;
-    revenue: number;
+    sales: number;
   }[];
 }
 
-export default function RevenueChart({
-  data,
-}: RevenueChartProps) {
+export default function SalesChart({ data }: SalesChartProps) {
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="month" />
-        <YAxis />
-        <Tooltip />
-        <Bar dataKey="revenue" fill="#3B82F6" />
-      </BarChart>
-    </ResponsiveContainer>
+    <div className="bg-white p-6 rounded-xl shadow-md">
+      <h2 className="text-xl font-bold text-black mb-4">
+        Sales Chart
+      </h2>
+
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+
+          <XAxis dataKey="month" />
+
+          <YAxis />
+
+          <Tooltip />
+
+          <Bar
+            dataKey="sales"
+            fill="#16a34a"
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
