@@ -1,38 +1,68 @@
+ {
+    "Revenue": [
+        "Revenue",
+        "Sales",
+        "Income",
+        "Turnover",
+        "Business Income"
+    ],
 
-{
-    "Revenue": {
-        "table": "stg_sales",
-        "column": "sales_amount",
-        "formula": "SUM(sales_amount)"
-    },
+    "Profit": [
+        "Profit",
+        "Net Profit",
+        "Earnings",
+        "Gain"
+    ],
 
-    "Profit": {
-        "table": "stg_sales",
-        "column": "profit",
-        "formula": "SUM(profit)"
-    },
+    "Orders": [
+        "Orders",
+        "Sales Orders",
+        "Order Count",
+        "Purchases"
+    ],
 
-    "Orders": {
-        "table": "stg_sales",
-        "column": "order_id",
-        "formula": "COUNT(order_id)"
-    },
+    "Customers": [
+        "Customer",
+        "Customers",
+        "Client",
+        "Clients",
+        "Buyer"
+    ],
 
-    "Customers": {
-        "table": "stg_customer",
-        "column": "customer_id",
-        "formula": "COUNT(customer_id)"
-    },
+    "Quantity": [
+        "Quantity",
+        "Units Sold",
+        "Items Sold"
+    ],
 
-    "Quantity": {
-        "table": "stg_sales",
-        "column": "quantity",
-        "formula": "SUM(quantity)"
-    },
+    "Discount": [
+        "Discount",
+        "Offer",
+        "Price Reduction"
+    ],
 
-    "Discount": {
-        "table": "stg_sales",
-        "column": "discount",
-        "formula": "SUM(discount)"
-    }
+    "Region": [
+        "Region",
+        "Location",
+        "Area",
+        "Zone"
+    ],
+
+    "Category": [
+        "Category",
+        "Department",
+        "Product Category"
+    ],
+
+    "Product": [
+        "Product",
+        "Item",
+        "Goods"
+    ],
+
+    "Date": [
+        "Date",
+        "Day",
+        "Order Date"
+    ]
 }
