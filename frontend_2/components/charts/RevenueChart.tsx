@@ -1,74 +1,34 @@
 "use client";
 
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
-  Tooltip,
   CartesianGrid,
-  ResponsiveContainer
+  Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 
+interface RevenueChartProps {
+  data: {
+    month: string;
+    revenue: number;
+  }[];
+}
 
-const data = [
-  {
-    month:"Jan",
-    revenue:100
-  },
-  {
-    month:"Feb",
-    revenue:200
-  },
-  {
-    month:"Mar",
-    revenue:300
-  },
-  {
-    month:"Apr",
-    revenue:450
-  }
-];
-
-
-export default function RevenueChart(){
-
-return(
-
-<div className="bg-white p-6 rounded-xl shadow-md">
-
-<h2 className="text-xl font-bold text-black mb-4">
-Revenue Chart
-</h2>
-
-
-<ResponsiveContainer width="100%" height={300}>
-
-<LineChart data={data}>
-
-<CartesianGrid />
-
-<XAxis dataKey="month"/>
-
-<YAxis/>
-
-<Tooltip/>
-
-
-<Line
-type="monotone"
-dataKey="revenue"
-stroke="#2563eb"
-/>
-
-
-</LineChart>
-
-</ResponsiveContainer>
-
-
-</div>
-
-)
-
+export default function RevenueChart({
+  data,
+}: RevenueChartProps) {
+  return (
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="month" />
+        <YAxis />
+        <Tooltip />
+        <Bar dataKey="revenue" fill="#3B82F6" />
+      </BarChart>
+    </ResponsiveContainer>
+  );
 }
