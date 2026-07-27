@@ -1,154 +1,90 @@
 # Semantic Layer Notes
 
-## Introduction
+## What is Business Intelligence (BI)?
 
-A Semantic Layer is a business-friendly layer that sits between the raw
-database and end users. It provides standardized definitions of business
-metrics and dimensions so that everyone in an organization works with
-the same data and calculations. This creates a single source of truth
-for reporting and analytics.
+Business Intelligence (BI) helps organisations analyse business data to make better decisions.
 
-------------------------------------------------------------------------
+Examples:
+- Revenue Analysis
+- Sales Dashboard
+- Customer Analysis
+- Profit Reports
 
-# Why is a Semantic Layer Important?
+---
 
--   Provides consistent business metrics across all reports and
-    dashboards.
--   Hides complex database structures from business users.
--   Reduces duplicate calculations and data inconsistencies.
--   Makes data easier to understand and analyze.
--   Improves collaboration between technical and business teams.
+## What is a Semantic Layer?
 
-------------------------------------------------------------------------
+A Semantic Layer is a business-friendly layer between the AI and the database.
 
-# Metrics
+Instead of users knowing database tables, they ask questions in business language.
 
-## Definition
+Example:
 
-A Metric is a measurable business value used to evaluate the performance
-of an organization. Metrics are usually calculated using one or more
-measures.
+User asks:
+Show Revenue
 
-### Examples
+Semantic Layer understands:
+Revenue = SUM(sales_amount)
 
--   Revenue
--   Profit
--   Sales
--   Average Order Value
--   Growth Percentage
+---
 
-### Characteristics
+## Why is it needed?
 
--   Used to measure business performance.
--   Derived using mathematical calculations.
--   Frequently displayed in reports and dashboards.
+- Hides database complexity
+- Standardises business definitions
+- Improves AI understanding
+- Reuses business metrics
+- Ensures consistent reporting
 
-------------------------------------------------------------------------
+---
 
-# Dimensions
+## What are Metrics?
 
-## Definition
+Metrics are measurable business values.
 
-Dimensions are descriptive attributes used to categorize, filter, and
-analyze business data.
+Examples:
 
-### Examples
+Revenue
+Profit
+Orders
+Customers
 
--   Customer Name
--   Product Category
--   Region
--   Date
--   Department
+---
 
-### Characteristics
+## What are Dimensions?
 
--   Provide context to business data.
--   Used for grouping and filtering reports.
--   Usually contain descriptive information instead of numerical values.
+Dimensions describe metrics.
 
-------------------------------------------------------------------------
+Examples:
 
-# Facts
+Product
+Region
+Category
+Customer
+Date
 
-## Definition
+---
 
-Facts are records of business transactions or events that occur within
-an organization. They typically contain measurable numerical values.
+## What are Facts?
 
-### Examples
+Facts are measurable values stored inside fact tables.
 
--   Sales Transaction
--   Customer Order
--   Invoice
--   Payment
+Example:
 
-### Characteristics
+Sales Amount
+Profit
+Quantity
 
--   Represent actual business events.
--   Stored in fact tables.
--   Contain measurable values such as quantity, sales amount, or cost.
+---
 
-------------------------------------------------------------------------
+## What are Measures?
 
-# Measures
+Measures are calculations performed on facts.
 
-## Definition
+Examples:
 
-Measures are numerical values stored in fact tables that can be
-aggregated using mathematical functions such as SUM, COUNT, AVG, MIN,
-and MAX.
+SUM(Revenue)
 
-### Examples
+AVG(Profit)
 
--   Sales Amount
--   Quantity Sold
--   Cost
--   Profit
-
-### Characteristics
-
--   Numeric in nature.
--   Used for calculations.
--   Can be summed, averaged, counted, or otherwise aggregated.
-
-------------------------------------------------------------------------
-
-# Difference Between Metrics, Dimensions, Facts, and Measures
-
-  Component   Description                      Example
-  ----------- -------------------------------- ------------------
-  Metric      Business performance indicator   Revenue
-  Dimension   Descriptive attribute            Product Category
-  Fact        Business transaction or event    Customer Order
-  Measure     Numerical value inside a fact    Sales Amount
-
-------------------------------------------------------------------------
-
-# Relationship
-
-Business Transaction\
-↓\
-Fact\
-↓\
-Measure\
-↓\
-Metric\
-↑\
-Analyzed using Dimensions
-
-------------------------------------------------------------------------
-Validation Layer
-
-Before sending SQL,
-all metrics are validated.
-
-Invalid data returns an error.
-****
-
-# Conclusion
-
-A Semantic Layer simplifies data analysis by providing standardized
-definitions for metrics, dimensions, facts, and measures. It ensures
-consistency across reports, improves data quality, and enables business
-users to make informed decisions using reliable and meaningful
-information.
+COUNT(Orders)
