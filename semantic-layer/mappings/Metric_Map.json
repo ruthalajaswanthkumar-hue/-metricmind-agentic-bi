@@ -1,1 +1,38 @@
 
+{
+    "Revenue": {
+        "table": "stg_sales",
+        "column": "sales_amount",
+        "formula": "SUM(sales_amount)"
+    },
+
+    "Profit": {
+        "table": "stg_sales",
+        "column": "profit",
+        "formula": "SUM(profit)"
+    },
+
+    "Orders": {
+        "table": "stg_sales",
+        "column": "order_id",
+        "formula": "COUNT(order_id)"
+    },
+
+    "Customers": {
+        "table": "stg_customer",
+        "column": "customer_id",
+        "formula": "COUNT(customer_id)"
+    },
+
+    "Quantity": {
+        "table": "stg_sales",
+        "column": "quantity",
+        "formula": "SUM(quantity)"
+    },
+
+    "Discount": {
+        "table": "stg_sales",
+        "column": "discount",
+        "formula": "SUM(discount)"
+    }
+}
