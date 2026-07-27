@@ -1,7 +1,9 @@
-cube(`Sales`, {
+ cube(`Sales`, {
+
   sql: `SELECT * FROM sales_summary`,
 
   measures: {
+
     revenue: {
       sql: `total_revenue`,
       type: `sum`,
@@ -31,5 +33,16 @@ cube(`Sales`, {
       type: `avg`,
       title: `Average Order Value`
     }
+
+  },
+
+  dimensions: {
+
+    reportType: {
+      sql: `'Sales Summary'`,
+      type: `string`
+    }
+
   }
+
 });
