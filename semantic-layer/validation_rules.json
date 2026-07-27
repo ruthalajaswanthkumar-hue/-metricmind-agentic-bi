@@ -1,31 +1,65 @@
-
-{
+ {
     "Revenue": {
         "type": "number",
-        "minimum": 0
+        "minimum": 0,
+        "required": true,
+        "description": "Revenue cannot be negative."
     },
 
     "Profit": {
-        "type": "number"
+        "type": "number",
+        "description": "Profit can be positive or negative."
     },
 
     "Orders": {
         "type": "integer",
-        "minimum": 0
+        "minimum": 0,
+        "required": true,
+        "description": "Orders must be a whole number."
     },
 
     "Customers": {
-        "type": "string",
-        "required": true
+        "type": "integer",
+        "minimum": 0,
+        "required": true,
+        "description": "Customer count cannot be negative."
+    },
+
+    "Quantity": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Quantity must be positive."
+    },
+
+    "Discount": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Discount should be between 0 and 100 percent."
     },
 
     "Profit Margin": {
         "type": "number",
         "minimum": 0,
-        "maximum": 100
+        "maximum": 100,
+        "description": "Profit margin percentage."
     },
 
     "Date": {
-        "type": "date"
+        "type": "date",
+        "required": true,
+        "description": "Must be a valid date."
+    },
+
+    "Region": {
+        "type": "string",
+        "required": true,
+        "description": "Region cannot be empty."
+    },
+
+    "Category": {
+        "type": "string",
+        "required": true,
+        "description": "Category cannot be empty."
     }
 }
