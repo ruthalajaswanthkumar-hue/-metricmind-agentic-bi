@@ -4,8 +4,12 @@ from backend.schemas.chart_response import ChartResponse
 
 router = APIRouter()
 
-
-@router.get("/charts", response_model=ChartResponse)
+@router.get(
+    "/charts",
+    response_model=ChartResponse,
+    summary="Get Dashboard Charts",
+    description="Returns bar, line, and pie chart data for the frontend dashboard."
+)
 def get_charts():
 
     charts = ChartService.get_all_charts()

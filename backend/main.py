@@ -23,24 +23,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(charts_router)
+@app.get(
+    "/",
+    summary="Root API",
+    description="Returns a welcome message to verify that the MetricMind Backend API is running."
+)
 
-@app.get("/")
-def root():
-    return {
-        "message": "Welcome to MetricMind Backend API"
-    }
 
-
-@app.get("/health")
-def health():
-    return {
-        "status": "healthy"
-    }
-
+@app.get(
+    "/health",
+    summary="Health Check",
+    description="Checks whether the backend service is running successfully."
+)
 
 
 
-@app.post("/chat")
+
+@app.post(
+    "/chat",
+    summary="Generate Business Insights",
+    description="Accepts a business question, generates SQL using AI, generates insights, recommends charts, and returns recommendations."
+)
 def chat(request: ChatRequest):
 
     sql = generate_sql(request.question)
