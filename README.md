@@ -16,7 +16,7 @@
 
 #  Project Overview
 
-**MetricMind** is an Enterprise AI-powered Business Intelligence (BI) platform that enables business users to ask questions in natural language and instantly receive accurate analytics, visualizations, and business insights.
+**MetricMind** is an Enterprise AI-powered Business Intelligence (BI) platform that enables business users to ask questions in natural language and instantly receive accurate analytics, visualizations, and business insights
 
 Instead of writing SQL queries manually, users can simply ask:
 
