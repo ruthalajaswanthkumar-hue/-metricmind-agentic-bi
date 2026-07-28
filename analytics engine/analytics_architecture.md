@@ -4,7 +4,7 @@
 
 ### Query Processor
 
-Extracts metrics, dimensions and filters from user questions.
+Extracts metrics, dimensions and filters from user questions
 
 ### Business Rules
 
