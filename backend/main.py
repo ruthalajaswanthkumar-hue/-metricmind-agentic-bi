@@ -1,18 +1,23 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+
 from backend.api.charts import router as charts_router
+from backend.schemas.chat import ChatRequest
+from backend.services.query_service import QueryService
+
 from ai_agent.text_to_sql import generate_sql
 from ai_agent.insight_generator import generate_insight
 from ai_agent.recommendation_engine import generate_recommendation
 from ai_agent.chart_recommender import recommend_chart
-from backend.schemas.chat import ChatRequest
-from backend.services.query_service import QueryService
+
 
 app = FastAPI(
     title="MetricMind Backend API",
     version="1.0.0"
 )
+
+# ---------------- CORS ---------------- #
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -22,22 +27,38 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ---------------- Routers ---------------- #
+
 app.include_router(charts_router)
+
+# ---------------- Root API ---------------- #
+
 @app.get(
     "/",
     summary="Root API",
     description="Returns a welcome message to verify that the MetricMind Backend API is running."
 )
+def root():
+    return {
+        "message": "Welcome to MetricMind Backend API"
+    }
 
+
+# ---------------- Health API ---------------- #
 
 @app.get(
     "/health",
     summary="Health Check",
     description="Checks whether the backend service is running successfully."
 )
+def health():
+    return {
+        "status": "healthy"
+    }
 
 
-
+# ---------------- Chat API ---------------- #
 
 @app.post(
     "/chat",
@@ -47,11 +68,26 @@ app.include_router(charts_router)
 def chat(request: ChatRequest):
 
     sql = generate_sql(request.question)
+
+    # Remove markdown if AI returns it
+    sql = (
+        sql.replace("```sql", "")
+           .replace("```", "")
+           .strip()
+    )
+
+    print("=" * 50)
+    print("Generated SQL:")
+    print(sql)
+    print("=" * 50)
+
+    # Validate SQL
     if not QueryService.validate_sql(sql):
-      return {
-        "success": False,
-        "error": "Unsafe SQL generated. Only SELECT, SHOW, and WITH statements are allowed."
-    }
+        return {
+            "success": False,
+            "generated_sql": sql,
+            "error": "Unsafe SQL generated. Only SELECT, SHOW, and WITH statements are allowed."
+        }
 
     # Mock database result
     sample_data = {
