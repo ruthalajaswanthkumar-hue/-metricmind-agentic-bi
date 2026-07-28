@@ -1,12 +1,38 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-
+from fastapi.middleware.cors import CORSMiddleware
 from ai_agent.text_to_sql import generate_sql
 from ai_agent.insight_generator import generate_insight
 from ai_agent.recommendation_engine import generate_recommendation
 from ai_agent.chart_recommender import recommend_chart
 
-app = FastAPI()
+app = FastAPI(
+    title="MetricMind Backend API",
+    version="1.0.0"
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+def root():
+    return {
+        "message": "Welcome to MetricMind Backend API"
+    }
+
+
+@app.get("/health")
+def health():
+    return {
+        "status": "healthy"
+    }
+
 
 class ChatRequest(BaseModel):
     question: str
