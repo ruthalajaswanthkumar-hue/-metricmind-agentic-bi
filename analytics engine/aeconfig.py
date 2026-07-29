@@ -4,6 +4,7 @@ Analytics Engine Configuration
 """
 
 ENGINE_NAME = "MetricMind Analytics Engine"
+
 VERSION = "1.0.0"
 
 SUPPORTED_CHARTS = [
