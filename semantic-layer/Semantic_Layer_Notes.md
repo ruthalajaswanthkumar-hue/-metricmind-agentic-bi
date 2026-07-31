@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A Semantic Layer is a business-friendly layer that sits between the database and the users. It provides a simple and consistent way to access data without requiring knowledge of complex database queries. It ensures that everyone in an organization uses the same definitions for business terms and metrics.
+A Semantic Layer is a business-friendly layer that sits between the database and the users. It provides a simple and consistent way to access data without requiring knowledge of complex database queries. It ensures that everyone in an organization uses the same definitions for business terms and metrics
 
 ---
 
