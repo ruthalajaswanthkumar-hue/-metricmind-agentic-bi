@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Business metrics are standardized measurements used to evaluate the performance of an organization. A Semantic Layer ensures that these metrics are consistently defined and calculated across reports, dashboards, and analytical applications, providing a single source of truth for business users.
+Business metrics are standardized measurements used to evaluate the performance of an organization. A Semantic Layer ensures that these metrics are consistently defined and calculated across reports, dashboards, and analytical applications, providing a single source of truth for business users
 
 ---
 
