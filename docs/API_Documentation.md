@@ -18,7 +18,7 @@ GET /
 
 ### Description
 
-Returns a welcome message.
+Returns a welcome message
 
 ### Response
 
