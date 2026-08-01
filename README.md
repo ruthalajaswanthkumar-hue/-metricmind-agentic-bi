@@ -4,14 +4,7 @@
 
 > **Enterprise-grade AI-powered Conversational Business Intelligence Platform**
 
-![Status](https://img.shields.io/badge/Status-Development-orange
-![Team](https://img.shields.io/badge/Team-6%20Members-blue
-![Frontend](https://img.shields.io/badge/Frontend-Next.js-black
-![Backend](https://img.shields.io/badge/Backend-FastAPI-green)
-![AI](https://img.shields.io/badge/AI-LangChain%20%7C%20Llama-red
-![Database](https://img.shields.io/badge/Database-Snowflake-blue)
-![License](https://img.shields.io/badge/Internship-Axlero%20Solutions-success
-
+ 
 ---
 
 #  Project Overview
