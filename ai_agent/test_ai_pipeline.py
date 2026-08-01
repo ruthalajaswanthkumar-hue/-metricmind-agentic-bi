@@ -1,7 +1,7 @@
 from text_to_sql import generate_sql
 from insight_generator import generate_insight
 from recommendation_engine import generate_recommendation
-from chart_recommandation import recommend_chart
+from ai_agent.chart_recommender import recommend_chart
 sample_data = {
     "revenue": 250000,
     "growth": "15%",
