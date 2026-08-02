@@ -1,141 +1,88 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiTrendingUp, FiAlertTriangle, FiStar } from "react-icons/fi";
+import {
+  FaArrowTrendUp,
+  FaLightbulb,
+  FaChartLine,
+} from "react-icons/fa6";
 
+const insights = [
+  {
+    icon: <FaChartLine />,
+    title: "Revenue Growth",
+    description: "Revenue has increased by 18% compared to last month.",
+    color: "text-green-600",
+    bg: "bg-green-100 dark:bg-green-900/40",
+  },
+  {
+    icon: <FaArrowTrendUp />,
+    title: "Best Performing Region",
+    description: "East region generated the highest sales this week.",
+    color: "text-blue-600",
+    bg: "bg-blue-100 dark:bg-blue-900/40",
+  },
+  {
+    icon: <FaLightbulb />,
+    title: "AI Recommendation",
+    description:
+      "Offer a weekend promotion to increase customer retention.",
+    color: "text-yellow-600",
+    bg: "bg-yellow-100 dark:bg-yellow-900/40",
+  },
+];
 
 export default function AIInsight() {
-
-
-  const insights = [
-    {
-      icon: <FiTrendingUp size={24} />,
-      title: "Revenue Growth",
-      description:
-        "Revenue increased by 12% compared to last month.",
-    },
-
-    {
-      icon: <FiAlertTriangle size={24} />,
-      title: "Sales Alert",
-      description:
-        "South region sales need more attention.",
-    },
-
-    {
-      icon: <FiStar size={24} />,
-      title: "Top Performance",
-      description:
-        "Customer engagement is improving.",
-    },
-  ];
-
-
-
   return (
-
     <motion.div
-
-      initial={{
-        opacity: 0,
-        y: 30,
-      }}
-
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
-
-      transition={{
-        duration: 0.5,
-      }}
-
-      className="
-        bg-white
-        rounded-xl
-        shadow-lg
-        p-6
-        mt-6
-      "
-
+      initial={{ opacity: 0, x: 40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      className="rounded-3xl bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700 p-6 h-full"
     >
+      <div className="flex items-center gap-3 mb-6">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xl">
+          🤖
+        </div>
 
+        <div>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+            AI Insights
+          </h2>
 
-      <h2
-        className="
-          text-xl
-          font-bold
-          text-gray-800
-          mb-5
-        "
-      >
-
-        🤖 AI Business Insights
-
-      </h2>
-
-
-
-      <div className="space-y-4">
-
-
-        {insights.map((item, index) => (
-
-          <motion.div
-
-            key={index}
-
-            whileHover={{
-              scale: 1.02,
-            }}
-
-            className="
-              flex
-              items-center
-              gap-4
-              p-4
-              bg-gray-50
-              rounded-lg
-            "
-
-          >
-
-            <div className="text-blue-600">
-
-              {item.icon}
-
-            </div>
-
-
-            <div>
-
-              <h3 className="font-semibold text-gray-800">
-
-                {item.title}
-
-              </h3>
-
-
-              <p className="text-gray-600 text-sm">
-
-                {item.description}
-
-              </p>
-
-
-            </div>
-
-
-          </motion.div>
-
-        ))}
-
-
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Smart recommendations powered by AI
+          </p>
+        </div>
       </div>
 
+      <div className="space-y-5">
+        {insights.map((item, index) => (
+          <motion.div
+            key={index}
+            whileHover={{
+              scale: 1.03,
+            }}
+            className="flex gap-4 rounded-2xl p-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+          >
+            <div
+              className={`flex h-12 w-12 items-center justify-center rounded-xl text-xl ${item.bg} ${item.color}`}
+            >
+              {item.icon}
+            </div>
 
+            <div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                {item.title}
+              </h3>
+
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                {item.description}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </motion.div>
-
   );
-
 }
