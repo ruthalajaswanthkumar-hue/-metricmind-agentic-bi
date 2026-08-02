@@ -1,50 +1,111 @@
-interface InputProps{
-message:string;
-setMessage:(value:string)=>void;
-sendMessage:()=>void;
+"use client";
+
+import { FaPaperPlane } from "react-icons/fa";
+
+interface InputProps {
+  message: string;
+  setMessage: (value: string) => void;
+  sendMessage: () => void;
 }
 
-
 export default function ChatInput({
-message,
-setMessage,
-sendMessage
-}:InputProps){
+  message,
+  setMessage,
+  sendMessage,
+}: InputProps) {
 
 
-return(
+  function handleKeyDown(
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) {
 
-<div className="flex gap-3 mt-4">
+    if (e.key === "Enter") {
+      sendMessage();
+    }
 
-
-<input
-
-value={message}
-
-onChange={(e)=>setMessage(e.target.value)}
-
-placeholder="Ask your business question..."
-
-className="flex-1 border p-3 rounded-lg text-black"
-
-/>
+  }
 
 
-<button
+  return (
 
-onClick={sendMessage}
-
-className="bg-blue-600 text-white px-5 rounded-lg"
-
->
-
-➤
-
-</button>
+    <div
+      className="
+      flex items-center gap-3
+      "
+    >
 
 
-</div>
+      <input
 
-)
+        value={message}
 
+        onChange={(e) =>
+          setMessage(e.target.value)
+        }
+
+        onKeyDown={handleKeyDown}
+
+        placeholder="Ask your business question..."
+
+        className="
+        flex-1
+        rounded-xl
+        border
+        border-gray-300
+        bg-gray-50
+        p-3
+        text-gray-900
+        outline-none
+        transition
+
+        focus:border-blue-500
+        focus:ring-2
+        focus:ring-blue-200
+
+        dark:border-gray-600
+        dark:bg-slate-800
+        dark:text-white
+        "
+
+      />
+
+
+
+      <button
+
+        onClick={sendMessage}
+
+        disabled={!message.trim()}
+
+        className="
+        flex
+        h-12
+        w-12
+        items-center
+        justify-center
+
+        rounded-xl
+
+        bg-blue-600
+        text-white
+
+        transition
+
+        hover:bg-blue-700
+        hover:scale-105
+
+        disabled:cursor-not-allowed
+        disabled:opacity-50
+        "
+
+      >
+
+        <FaPaperPlane />
+
+      </button>
+
+
+    </div>
+
+  );
 }
