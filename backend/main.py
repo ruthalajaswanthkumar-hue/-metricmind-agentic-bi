@@ -1,3 +1,5 @@
+
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -9,6 +11,7 @@ from ai_agent.text_to_sql import generate_sql
 from ai_agent.insight_generator import generate_insight
 from ai_agent.recommendation_engine import generate_recommendation
 from ai_agent.chart_recommender import recommend_chart
+print(">>> backend.main loaded <<<")
 
 
 app = FastAPI(
@@ -59,51 +62,53 @@ def health():
 
 
 # ---------------- Chat API ---------------- #
-
-@app.post(
-    "/chat",
-    summary="Generate Business Insights",
-    description="Accepts a business question, generates SQL using AI, generates insights, recommends charts, and returns recommendations."
-)
+@app.post("/chat")
 def chat(request: ChatRequest):
+    try:
+        print("===== CHAT API CALLED =====")
+        print("Question:", request.question)
 
-    sql = generate_sql(request.question)
+        sql = generate_sql(request.question)
+        print("Generated SQL:", sql)
+        print("=" * 60)
+        print("RAW AI SQL:")
+        print(sql)
+        print("=" * 60)
 
-    # Remove markdown if AI returns it
-    sql = (
-        sql.replace("```sql", "")
-           .replace("```", "")
-           .strip()
-    )
+        sql = (
+            sql.replace("```sql", "")
+               .replace("```", "")
+               .strip()
+        )
 
-    print("=" * 50)
-    print("Generated SQL:")
-    print(sql)
-    print("=" * 50)
+        if not QueryService.validate_sql(sql):
+            return {
+                "success": False,
+                "generated_sql": sql,
+                "error": "Unsafe SQL generated."
+            }
 
-    # Validate SQL
-    if not QueryService.validate_sql(sql):
+        query_result = QueryService.execute_query(sql)
+        print("Query Result:", query_result)
+
+        insight = generate_insight(query_result)
+        recommendation = generate_recommendation(query_result)
+        chart = recommend_chart(request.question)
+
         return {
-            "success": False,
+            "question": request.question,
             "generated_sql": sql,
-            "error": "Unsafe SQL generated. Only SELECT, SHOW, and WITH statements are allowed."
+            "query_result": query_result,
+            "chart": chart,
+            "insight": insight,
+            "recommendation": recommendation
         }
 
-    # Mock database result
-    sample_data = {
-        "revenue": 250000,
-        "growth": "15%",
-        "region": "North"
-    }
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
 
-    insight = generate_insight(sample_data)
-    recommendation = generate_recommendation(sample_data)
-    chart = recommend_chart(request.question)
-
-    return {
-        "question": request.question,
-        "generated_sql": sql,
-        "chart": chart,
-        "insight": insight,
-        "recommendation": recommendation
-    }
+        return {
+            "success": False,
+            "error": str(e)
+        }

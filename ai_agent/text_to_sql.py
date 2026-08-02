@@ -8,7 +8,7 @@ with open(prompt_path, "r", encoding="utf-8") as file:
     
 llm = OllamaLLM(
     model="llama3:latest",
-    base_url="http://127.0.0.1:11434"
+   
 )
 
 

@@ -1,0 +1,16 @@
+2026-07-22 15:39:30,923 | INFO | Question Received: string
+2026-07-22 15:39:41,026 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-22 15:39:41,962 | INFO | Generated SQL: I'm ready!
+
+What is the string you'd like me to convert? Please provide it, and I'll craft the corresponding SQL query for you.
+2026-07-22 15:39:41,962 | INFO | Execution Time: 11.04 seconds
+2026-07-22 15:40:55,843 | INFO | Question Received: Show all companies
+2026-07-22 15:40:59,057 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-22 15:40:59,273 | INFO | Generated SQL: ```
+SELECT * FROM companies;
+```
+2026-07-22 15:40:59,273 | INFO | Execution Time: 3.43 seconds
+2026-07-22 15:44:42,909 | INFO | Question Received: Show all companies
+2026-07-22 15:44:46,335 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-22 15:44:46,471 | INFO | Generated SQL: SELECT * FROM Companies;
+2026-07-22 15:44:46,497 | INFO | Execution Time: 3.59 seconds

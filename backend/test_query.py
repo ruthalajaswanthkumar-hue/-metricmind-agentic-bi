@@ -1,6 +1,10 @@
 from backend.services.query_service import QueryService
 
-sql = "SELECT 1 AS test"
+sql = """
+SELECT *
+FROM sales
+LIMIT 5;
+"""
 
 result = QueryService.execute_query(sql)
 
