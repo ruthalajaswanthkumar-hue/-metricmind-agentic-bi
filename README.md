@@ -2,7 +2,7 @@
 
 > **Enterprise-grade AI-powered Conversational Business Intelligence Platform**
 
-![Status](https://img.shields.io/badge/Status-Development-orange)
+![Status](https://img.shields.io/badge/Status-Development-orange
 ![Team](https://img.shields.io/badge/Team-6%20Members-blue)
 ![Frontend](https://img.shields.io/badge/Frontend-Next.js-black)
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-green)
