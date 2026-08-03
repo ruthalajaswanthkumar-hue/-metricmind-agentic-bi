@@ -3,7 +3,7 @@
   **Enterprise-grade AI-powered Conversational Business Intelligence Platform**
 
  
----
+ 
 
 #  Project Overview
 
@@ -11,7 +11,7 @@
 
 Instead of writing SQL queries manually, users can simply ask:
 
-> **"Why did European sales decrease last quarter?"**
+ **"Why did European sales decrease last quarter?"**
 
 MetricMind intelligently:
 
