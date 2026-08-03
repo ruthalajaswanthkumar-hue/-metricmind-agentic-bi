@@ -3,7 +3,7 @@
 
 ## Purpose
 
-The Analytics Engine converts processed business data into meaningful insights and prepares responses for the dashboard.
+The Analytics Engine converts processed business data into meaningful insights and prepares responses for the dashboard
 
 ---
 
