@@ -1,8 +1,6 @@
  #  MetricMind – Agentic Semantic BI Engine
  
- 
-
-> **Enterprise-grade AI-powered Conversational Business Intelligence Platform**
+  **Enterprise-grade AI-powered Conversational Business Intelligence Platform**
 
  
 ---
