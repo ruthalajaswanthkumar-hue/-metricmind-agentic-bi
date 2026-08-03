@@ -345,7 +345,7 @@ To build a **production-ready AI-powered Conversational Business Intelligence Pl
 
 ---
 
-# 📄 License
+#  License
 
 This project is developed as part of the **Axlero Solutions Advanced Data Analytics Internship Program**.
 
