@@ -3,180 +3,149 @@
 
 import { motion } from "framer-motion";
 import { FaUser } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import { useEffect,useState } from "react";
 
+import { getUser } from "@/lib/auth";
 
 
 
 export default function ProfileCard(){
 
 
-  return (
+const router = useRouter();
 
 
-    <motion.div
+const [user,setUser]=useState<any>(null);
 
 
-      whileHover={{
-        scale:1.02,
-      }}
 
+useEffect(()=>{
 
-      className="
-      rounded-2xl
-      bg-white
-      p-6
-      shadow-md
 
-      dark:bg-slate-900
-      "
+setUser(getUser());
 
-    >
 
+},[]);
 
 
 
-      <div
 
-        className="
-        flex
-        items-center
-        gap-5
-        "
+return (
 
-      >
 
+<motion.div
 
+whileHover={{
+scale:1.02
+}}
 
+className="
+rounded-2xl
+bg-white
+p-6
+shadow-md
+dark:bg-slate-900
+"
 
+>
 
 
-        {/* Avatar */}
+<div className="
+flex
+items-center
+gap-5
+">
 
 
+<div className="
+flex
+h-16
+w-16
+items-center
+justify-center
+rounded-full
+bg-blue-600
+text-2xl
+text-white
+">
 
-        <div
+<FaUser/>
 
-          className="
-          flex
-          h-16
-          w-16
-          items-center
-          justify-center
-          rounded-full
-          bg-blue-600
-          text-2xl
-          text-white
-          "
+</div>
 
-        >
 
-          <FaUser />
 
-        </div>
+<div>
 
 
+<h2 className="
+text-xl
+font-semibold
+text-gray-900
+dark:text-white
+">
 
+{
+user?.name || "User"
+}
 
+</h2>
 
 
 
+<p className="
+text-sm
+text-gray-500
+dark:text-gray-400
+">
 
-        {/* User Details */}
+{
+user?.email || "user@example.com"
+}
 
+</p>
 
 
-        <div>
 
+</div>
 
-          <h2
 
-            className="
-            text-xl
-            font-semibold
-            text-gray-900
+</div>
 
-            dark:text-white
-            "
 
-          >
 
-            Neelum
 
-          </h2>
+<button
 
+onClick={()=>router.push("/profile")}
 
 
+className="
+mt-5
+rounded-xl
+bg-blue-600
+px-5
+py-2
+text-sm
+font-medium
+text-white
+hover:bg-blue-700
+"
 
+>
 
-          <p
+Edit Profile
 
-            className="
-            text-sm
-            text-gray-500
 
-            dark:text-gray-400
-            "
+</button>
 
-          >
 
-            neelum@example.com
 
-          </p>
+</motion.div>
 
 
-
-
-        </div>
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-      {/* Edit Button */}
-
-
-
-      <button
-
-
-        className="
-        mt-5
-        rounded-xl
-        bg-blue-600
-        px-5
-        py-2
-        text-sm
-        font-medium
-        text-white
-
-        transition
-
-        hover:bg-blue-700
-        "
-
-      >
-
-        Edit Profile
-
-      </button>
-
-
-
-
-
-
-    </motion.div>
-
-
-  );
+);
 
 
 }
