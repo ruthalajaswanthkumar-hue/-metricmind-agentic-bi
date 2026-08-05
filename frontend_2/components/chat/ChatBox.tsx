@@ -11,27 +11,20 @@ import ChatInput from "./ChatInput";
 import AIResponse from "./AIResponse";
 import TypingAnimation from "./TypingAnimation";
 
-
 type Message = {
-  text: string;
   sender: "user" | "ai";
+  text?: string;
+  dashboard?: any;
 };
 
-
-
 export default function ChatBox() {
-
-
   const [message, setMessage] = useState("");
-
   const [loading, setLoading] = useState(false);
-
-
 
   const [messages, setMessages] = useState<Message[]>([
     {
-      text:
-`👋 Hello! I'm MetricMind AI.
+      sender: "ai",
+      text: `👋 Hello! I'm MetricMind AI.
 
 I can help you analyze:
 
@@ -41,12 +34,8 @@ I can help you analyze:
 🌎 Regional Performance
 
 Ask me anything about your business data.`,
-      sender: "ai",
     },
   ]);
-
-
-
 
   const suggestions = [
     "📊 Show monthly revenue analysis",
@@ -55,206 +44,78 @@ Ask me anything about your business data.`,
     "👥 Find top customers",
   ];
 
-
-
-
   const bottomRef = useRef<HTMLDivElement>(null);
 
-
-
-
   useEffect(() => {
-
     bottomRef.current?.scrollIntoView({
       behavior: "smooth",
     });
-
   }, [messages, loading]);
 
 
-
-
-
-
-
   async function sendMessage() {
-
-
-    if (!message.trim()) return;
-
-
+    if (!message.trim() || loading) return;
 
     const currentMessage = message;
 
-
-
-    const userMessage: Message = {
-
-      text: currentMessage,
-
-      sender: "user",
-
-    };
-
-
-
-
-    setMessages((prev)=>[
-
+    setMessages((prev) => [
       ...prev,
-
-      userMessage,
-
+      {
+        sender: "user",
+        text: currentMessage,
+      },
     ]);
 
-
-
-
     setMessage("");
-
     setLoading(true);
 
-
-
-
     try {
+      const response = await api.post("/chat", {
+        question: currentMessage,
+      });
 
-
-      const response = await api.post(
-        "/chat",
+      setMessages((prev) => [
+        ...prev,
         {
-          message: currentMessage,
-        }
-      );
-
-
-
-
-      const aiMessage: Message = {
-
-
-        text:
-
-          response.data.response ||
-
-          response.data.message ||
-
-          "No AI response received.",
-
-
-        sender:"ai",
-
-
-      };
-
-
-
-
-      setMessages((prev)=>[
-
-        ...prev,
-
-        aiMessage,
-
+          sender: "ai",
+          dashboard: response.data,
+        },
       ]);
 
+    } catch (error) {
+      console.error("Chat API Error:", error);
 
-
-
-    }
-
-    catch(error){
-
-
-      console.error(
-        "Chat API Error:",
-        error
-      );
-
-
-
-      const errorMessage: Message = {
-
-
-        text:
-        "⚠️ Unable to connect with MetricMind AI server.",
-
-
-        sender:"ai",
-
-
-      };
-
-
-
-
-      setMessages((prev)=>[
-
+      setMessages((prev) => [
         ...prev,
-
-        errorMessage,
-
+        {
+          sender: "ai",
+          text: "⚠️ Unable to connect with MetricMind AI server.",
+        },
       ]);
 
-
-
-
-    }
-
-
-    finally{
-
-
+    } finally {
       setLoading(false);
-
-
     }
-
-
-
   }
 
 
-
-
-
-
-
-
-
   return (
-
-
     <motion.div
-
       initial={{
-        opacity:0,
-        y:30,
+        opacity: 0,
+        y: 30,
       }}
-
-
       animate={{
-        opacity:1,
-        y:0,
+        opacity: 1,
+        y: 0,
       }}
-
-
       transition={{
-        duration:0.5,
+        duration: 0.5,
       }}
-
-
       className="mx-auto max-w-5xl"
-
     >
 
-
-
-
-
       {/* AI Header */}
-
-
 
       <div
         className="
@@ -271,8 +132,6 @@ Ask me anything about your business data.`,
         shadow-xl
         "
       >
-
-
         <div
           className="
           flex
@@ -285,52 +144,23 @@ Ask me anything about your business data.`,
           text-3xl
           "
         >
-
           <FaRobot />
-
         </div>
-
-
-
-
 
         <div>
-
-
           <h1 className="text-2xl font-bold sm:text-3xl">
-
             MetricMind AI Assistant
-
           </h1>
 
-
-
-
           <p className="text-sm text-blue-100 sm:text-base">
-
             Ask business questions and receive AI-powered insights.
-
           </p>
-
-
-
         </div>
-
-
 
       </div>
 
 
-
-
-
-
-
-
-
       {/* Chat Window */}
-
-
 
       <div
         className="
@@ -340,25 +170,14 @@ Ask me anything about your business data.`,
         border-gray-200
         bg-white
         shadow-2xl
-
         transition-all
         duration-300
-
         dark:border-gray-700
         dark:bg-slate-900
         "
       >
 
-
-
-
-
-
-
-
         {/* Messages */}
-
-
 
         <div
           className="
@@ -370,186 +189,102 @@ Ask me anything about your business data.`,
           "
         >
 
+          {messages.map((msg, index) =>
+
+            msg.sender === "user" ? (
+
+              <MessageBubble
+                key={index}
+                text={msg.text}
+                sender="user"
+              />
+
+            ) : msg.dashboard ? (
+
+              <AIResponse
+                key={index}
+                dashboard={msg.dashboard}
+              />
+
+            ) : (
+
+              <MessageBubble
+                key={index}
+                text={msg.text}
+                sender="ai"
+              />
+
+            )
+
+          )}
 
 
-
-          {
-            messages.map((msg,index)=>(
+          {loading && <TypingAnimation />}
 
 
-              msg.sender==="user"
-
-
-              ?
-
-
-              (
-
-                <MessageBubble
-
-                  key={index}
-
-                  text={msg.text}
-
-                  sender={msg.sender}
-
-                />
-
-              )
-
-
-              :
-
-
-              (
-
-                <AIResponse
-
-                  key={index}
-
-                  content={msg.text}
-
-                />
-
-              )
-
-
-            ))
-          }
-
-
-
-
-
-
-          {
-            loading && <TypingAnimation />
-          }
-
-
-
-
-
-
-
-          <div ref={bottomRef}/>
-
-
-
-
-
-
-
+          <div ref={bottomRef} />
 
 
           {/* Suggestions */}
 
+          {messages.length === 1 && (
+
+            <div className="mt-6">
+
+              <p
+                className="
+                mb-3
+                text-sm
+                text-gray-500
+                dark:text-gray-400
+                "
+              >
+                Try asking:
+              </p>
 
 
+              <div className="flex flex-wrap gap-3">
 
-          {
-            messages.length===1 && (
+                {suggestions.map((item, index) => (
 
+                  <button
+                    key={index}
+                    onClick={() =>
+                      setMessage(item.replace(/^[^\w]+/, ""))
+                    }
+                    className="
+                    rounded-full
+                    border
+                    border-blue-200
+                    bg-blue-50
+                    px-4
+                    py-2
+                    text-sm
+                    text-blue-700
+                    transition
+                    hover:bg-blue-100
+                    hover:scale-105
+                    dark:border-blue-800
+                    dark:bg-slate-800
+                    dark:text-blue-300
+                    "
+                  >
+                    {item}
+                  </button>
 
-              <div className="mt-6">
-
-
-                <p
-                  className="
-                  mb-3
-                  text-sm
-                  text-gray-500
-
-                  dark:text-gray-400
-                  "
-                >
-
-                  Try asking:
-
-                </p>
-
-
-
-
-
-                <div className="flex flex-wrap gap-3">
-
-
-                  {
-                    suggestions.map((item,index)=>(
-
-
-                      <button
-
-
-                        key={index}
-
-
-                        onClick={()=>
-                          setMessage(item)
-                        }
-
-
-                        className="
-                        rounded-full
-                        border
-                        border-blue-200
-                        bg-blue-50
-                        px-4
-                        py-2
-                        text-sm
-                        text-blue-700
-
-                        transition
-
-                        hover:bg-blue-100
-                        hover:scale-105
-
-
-                        dark:border-blue-800
-                        dark:bg-slate-800
-                        dark:text-blue-300
-                        "
-
-                      >
-
-                        {item}
-
-                      </button>
-
-
-                    ))
-                  }
-
-
-                </div>
-
+                ))}
 
               </div>
 
+            </div>
 
-            )
-          }
-
-
-
-
-
-
+          )}
 
         </div>
 
 
 
-
-
-
-
-
         {/* Input */}
-
-
-
 
         <div
           className="
@@ -560,45 +295,24 @@ Ask me anything about your business data.`,
           bg-white
           p-4
           sm:p-6
-
           dark:border-gray-700
           dark:bg-slate-900
           "
         >
 
-
-
-
           <ChatInput
-
-
             message={message}
-
             setMessage={setMessage}
-
             sendMessage={sendMessage}
-
-
+            loading={loading}
           />
 
-
-
         </div>
-
-
-
 
 
       </div>
 
 
-
-
-
-
     </motion.div>
-
-
   );
-
 }
