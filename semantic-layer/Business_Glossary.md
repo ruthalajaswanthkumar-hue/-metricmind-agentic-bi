@@ -1,4 +1,4 @@
-# Business Glossary
+ # Business Glossary
 
 ## Objective
 
