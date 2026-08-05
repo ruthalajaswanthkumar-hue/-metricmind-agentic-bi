@@ -1,5 +1,7 @@
  from pydantic import BaseModel
+from typing import Any
 
 
-class ErrorResponse(BaseModel):
-    error: str
+class Chart_Response(BaseModel):
+    status: str
+    charts: Any
