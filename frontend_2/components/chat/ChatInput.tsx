@@ -6,12 +6,14 @@ interface InputProps {
   message: string;
   setMessage: (value: string) => void;
   sendMessage: () => void;
+  loading: boolean;
 }
 
 export default function ChatInput({
   message,
   setMessage,
   sendMessage,
+  loading,
 }: InputProps) {
 
 
@@ -19,7 +21,8 @@ export default function ChatInput({
     e: React.KeyboardEvent<HTMLInputElement>
   ) {
 
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
       sendMessage();
     }
 
@@ -28,11 +31,7 @@ export default function ChatInput({
 
   return (
 
-    <div
-      className="
-      flex items-center gap-3
-      "
-    >
+    <div className="flex items-center gap-3">
 
 
       <input
@@ -45,7 +44,13 @@ export default function ChatInput({
 
         onKeyDown={handleKeyDown}
 
-        placeholder="Ask your business question..."
+        disabled={loading}
+
+        placeholder={
+          loading
+            ? "MetricMind AI is thinking..."
+            : "Ask your business question..."
+        }
 
         className="
         flex-1
@@ -62,6 +67,9 @@ export default function ChatInput({
         focus:ring-2
         focus:ring-blue-200
 
+        disabled:cursor-not-allowed
+        disabled:opacity-50
+
         dark:border-gray-600
         dark:bg-slate-800
         dark:text-white
@@ -75,7 +83,9 @@ export default function ChatInput({
 
         onClick={sendMessage}
 
-        disabled={!message.trim()}
+        disabled={
+          !message.trim() || loading
+        }
 
         className="
         flex
