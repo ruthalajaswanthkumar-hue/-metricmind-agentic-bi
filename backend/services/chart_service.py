@@ -1,73 +1,53 @@
- from sqlalchemy import text
-from sqlalchemy.exc import SQLAlchemyError
+"""
+Chart Service
+Provides chart data for dashboard visualization.
+"""
 
-from backend.database import engine
-class QueryService:
-    """
-    Handles all database query execution.
-    """
+class ChartService:
 
     @staticmethod
-    def validate_sql(sql: str):
-        """
-        Validate that only safe SQL statements are executed.
-        """
+    def get_bar_chart():
 
-        if not sql:
-            return False
+        # TODO:
+        # Replace with database query
 
-        sql = sql.strip().lower()
-
-        allowed = (
-            "select",
-            "show",
-            "with"
-        )
-
-        return sql.startswith(allowed)
+        return [
+            {"month": "Jan", "value": 120},
+            {"month": "Feb", "value": 180},
+            {"month": "Mar", "value": 250},
+            {"month": "Apr", "value": 300}
+        ]
 
     @staticmethod
-    def execute_query(sql: str):
-        """
-        Execute SQL query and return results.
-        """
+    def get_line_chart():
 
-        if not QueryService.validate_sql(sql):
-            return {
-                "success": False,
-                "error": "Only SELECT, SHOW, and WITH queries are allowed."
-            }
+        # TODO:
+        # Replace with database query
 
-        try:
-            with engine.connect() as connection:
+        return [
+            {"month": "Jan", "revenue": 50000},
+            {"month": "Feb", "revenue": 65000},
+            {"month": "Mar", "revenue": 72000},
+            {"month": "Apr", "revenue": 81000}
+        ]
 
-                result = connection.execute(text(sql))
+    @staticmethod
+    def get_pie_chart():
 
-                if result.returns_rows:
+        # TODO:
+        # Replace with database query
 
-                    rows = result.fetchall()
-                    columns = result.keys()
+        return [
+            {"name": "Electronics", "value": 45},
+            {"name": "Furniture", "value": 30},
+            {"name": "Clothing", "value": 25}
+        ]
 
-                    data = [
-                        dict(zip(columns, row))
-                        for row in rows
-                    ]
+    @classmethod
+    def get_all_charts(cls):
 
-                    return {
-                        "success": True,
-                        "count": len(data),
-                        "data": data
-                    }
-
-                return {
-                    "success": True,
-                    "message": "Query executed successfully."
-                }
-
-        except SQLAlchemyError as error:
-
-            return {
-                "success": False,
-                "error": str(error)
-            }
-            
+        return {
+            "bar": cls.get_bar_chart(),
+            "line": cls.get_line_chart(),
+            "pie": cls.get_pie_chart()
+        }
