@@ -1,4 +1,4 @@
- from pathlib import Path
+from pathlib import Path
 from langchain_ollama import OllamaLLM
 
 BASE_DIR = Path(__file__).parent
@@ -7,10 +7,11 @@ prompt_path = BASE_DIR / "prompts" / "sql_prompt.txt"
 with open(prompt_path, "r", encoding="utf-8") as file:
     sql_prompt = file.read()
 
-llm = OllamaLLM(model="llama3:latest")
+llm = OllamaLLM(model="qwen2.5:3b")
 
 
 def generate_sql(question):
+
     prompt = f"""
 {sql_prompt}
 
@@ -19,15 +20,19 @@ User Request:
 
 SQL:
 """
-    return llm.invoke(prompt)
 
+    sql = llm.invoke(prompt)
 
-def main():
-    question = input("Enter your question: ")
+    sql = sql.replace("```sql", "")
+    sql = sql.replace("```", "")
+    sql = sql.strip()
 
-    print("\nGenerated SQL:\n")
-    print(generate_sql(question))
+    upper_sql = sql.upper()
 
+    if "SELECT" in upper_sql:
+        sql = sql[upper_sql.index("SELECT"):]
 
-if __name__ == "__main__":
-    main()
+    if ";" in sql:
+        sql = sql.split(";")[0] + ";"
+
+    return sql
