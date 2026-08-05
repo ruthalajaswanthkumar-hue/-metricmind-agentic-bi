@@ -1,112 +1,85 @@
-def generate_dashboard(self, data):
+ from analytics_engine.kpi_calculator import KPICalculator
+from analytics_engine.trend_analyzer import TrendAnalyzer
+from analytics_engine.insight_generator import InsightGenerator
+from analytics_engine.recommendation_engine import RecommendationEngine
+from analytics_engine.chart_selector import ChartSelector
+from analytics_engine.response_formatter import ResponseFormatter
 
-    # Calculate KPIs
 
-    revenue = KPICalculator.calculate_revenue(data)
-    profit = KPICalculator.calculate_profit(data)
-    orders = KPICalculator.calculate_orders(data)
-    customers = KPICalculator.calculate_customers(data)
+class AnalyticsPipeline:
 
-    kpis= {
-        "Revenue": revenue,
-        "Profit": profit,
-        "Orders": orders,
-        "Customers": customers
-    }
+    def generate_dashboard(self, data):
 
-    # Analyze Trends
+        # Convert SQL rows into one summary dictionary
+        if isinstance(data, list):
 
-    revenue_trend = TrendAnalyzer.analyze(revenue, 450000)
-    profit_trend = TrendAnalyzer.analyze(profit, 100000)
-    orders_trend = TrendAnalyzer.analyze(orders, 300)
-    customers_trend = TrendAnalyzer.analyze(customers, 200)
+            summary = {
+                "Revenue": 0,
+                "Profit": 0,
+                "Orders": 0,
+                "Customers": 0
+            }
 
-    trends = {
-        "Revenue": revenue_trend,
-        "Profit": profit_trend,
-        "Orders": orders_trend,
-        "Customers": customers_trend
-    }
+            for row in data:
+                summary["Revenue"] += row.get("Revenue", 0)
+                summary["Profit"] += row.get("Profit", 0)
+                summary["Orders"] += row.get("Orders", 0)
+                summary["Customers"] += row.get("Customers", 0)
 
-    # Generate Insights
+            data = summary
 
-    revenue_insight = InsightGenerator.generate(
-        "Revenue",
-        revenue,
-        450000
-    )
+        # KPIs
+        revenue = KPICalculator.calculate_revenue(data)
+        profit = KPICalculator.calculate_profit(data)
+        orders = KPICalculator.calculate_orders(data)
+        customers = KPICalculator.calculate_customers(data)
 
-    profit_insight = InsightGenerator.generate(
-        "Profit",
-        profit,
-        100000
-    )
+        kpis = {
+            "Revenue": revenue,
+            "Profit": profit,
+            "Orders": orders,
+            "Customers": customers
+        }
 
-    customer_insight = InsightGenerator.customer_insight(customers)
+        # Trends
+        trends = {
+            "Revenue": TrendAnalyzer.analyze(revenue, 450000),
+            "Profit": TrendAnalyzer.analyze(profit, 100000),
+            "Orders": TrendAnalyzer.analyze(orders, 300),
+            "Customers": TrendAnalyzer.analyze(customers, 200)
+        }
 
-    order_insight = InsightGenerator.order_insight(orders)
+        # Insights
+        insights = [
+            InsightGenerator.generate("Revenue", revenue, 450000),
+            InsightGenerator.generate("Profit", profit, 100000),
+            InsightGenerator.customer_insight(customers),
+            InsightGenerator.order_insight(orders)
+        ]
 
-    insights = [
-        revenue_insight,
-        profit_insight,
-        customer_insight,
-        order_insight
-    ]
+        # Recommendations
+        recommendations = [
+            RecommendationEngine.generate("Revenue", trends["Revenue"]["trend"]),
+            RecommendationEngine.generate("Profit", trends["Profit"]["trend"]),
+            RecommendationEngine.generate("Orders", trends["Orders"]["trend"]),
+            RecommendationEngine.generate("Customers", trends["Customers"]["trend"])
+        ]
 
-    # Generate Recommendations
+        # Charts
+        charts = {
+            "Revenue": ChartSelector.get_chart("Revenue"),
+            "Profit": ChartSelector.get_chart("Profit"),
+            "Orders": ChartSelector.get_chart("Orders"),
+            "Customers": ChartSelector.get_chart("Customers")
+        }
 
-    revenue_recommendation = RecommendationEngine.generate(
-        "Revenue",
-        revenue_trend["trend"]
-    )
-
-    profit_recommendation = RecommendationEngine.generate(
-        "Profit",
-        profit_trend["trend"]
-    )
-
-    orders_recommendation = RecommendationEngine.generate(
-        "Orders",
-        orders_trend["trend"]
-    )
-
-    customers_recommendation = RecommendationEngine.generate(
-        "Customers",
-        customers_trend["trend"]
-    )
-
-    recommendations = [
-        revenue_recommendation,
-        profit_recommendation,
-        orders_recommendation,
-        customers_recommendation
-    ]
-
-    # Select Chart
-
-    revenue_chart = ChartSelector.get_chart("Revenue")
-    profit_chart = ChartSelector.get_chart("Profit")
-    orders_chart = ChartSelector.get_chart("Orders")
-    customers_chart = ChartSelector.get_chart("Customers")
-
-    charts = {
-        "Revenue": revenue_chart,
-        "Profit": profit_chart,
-        "Orders": orders_chart,
-        "Customers": customers_chart
-    }
-
-    # Format Response
-
-    dashboard_response = ResponseFormatter.format_response(
-        title="Business Dashboard",
-        metric="Business Analytics",
-        chart=charts,
-        data=data,
-        insights=insights,
-        kpis=kpis,
-        recommendations=recommendations,
-        trend=trends
-    )
-
-    return dashboard_response
+        return ResponseFormatter.format_response(
+            title="Business Dashboard",
+            metric="Business Analytics",
+            chart=charts,
+            data=data,
+            insights=insights,
+            kpis=kpis,
+            recommendations=recommendations,
+            trend=trends
+        )
