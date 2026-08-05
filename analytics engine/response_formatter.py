@@ -19,14 +19,25 @@ class ResponseFormatter:
     ):
 
         return {
-            "status": "success",
-            "title": title,
-            "metric": metric,
-            "recommended_chart": chart,
-            "trend": trend if trend else {},
-            "total_records": len(data),
-            "kpis": kpis if kpis else {},
-            "insights": insights if insights else [],
-            "recommendations": recommendations if recommendations else [],
-            "data": data
-        }
+    "status": "success",
+
+    "title": title,
+
+    "metric": metric,
+
+    "recommended_chart": chart,
+
+    "trend": trend if trend else {},
+
+    "total_records": len(data),
+
+    "analytics": {
+        "kpis": kpis if kpis else {},
+
+        "insights": insights if insights else [],
+
+        "recommendations": recommendations if recommendations else [],
+
+        "data": data
+    }
+}
