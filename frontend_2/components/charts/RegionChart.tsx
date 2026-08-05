@@ -1,74 +1,44 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   PieChart,
   Pie,
-  Cell,
   Tooltip,
   ResponsiveContainer,
+  Cell,
   Legend,
 } from "recharts";
-import { FaGlobeAsia } from "react-icons/fa";
-
-interface RegionChartProps {
-  data: {
-    name: string;
-    value: number;
-  }[];
-}
 
 const COLORS = [
-  "#3B82F6", // Blue
-  "#10B981", // Green
-  "#F59E0B", // Orange
-  "#8B5CF6", // Purple
+  "#3B82F6",
+  "#22C55E",
+  "#F59E0B",
+  "#EF4444",
+  "#8B5CF6",
+  "#06B6D4",
 ];
 
-export default function RegionChart({
-  data,
-}: RegionChartProps) {
+export default function RegionChart({ data }: any) {
+  if (!data || data.length === 0) return null;
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.5 }}
-      className="rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl p-6"
-    >
-      {/* Header */}
-      <div className="mb-6">
-        <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300">
-            <FaGlobeAsia size={22} />
-          </div>
+    <div className="rounded-2xl bg-white dark:bg-slate-800 p-6 shadow-lg">
 
-          <div>
-            <p className="text-sm uppercase tracking-widest font-semibold text-blue-600">
-              Regional Analytics
-            </p>
+      <h2 className="mb-5 text-xl font-bold text-gray-900 dark:text-white">
+        🥧 Business Distribution
+      </h2>
 
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Sales Distribution
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      {/* Pie Chart */}
       <ResponsiveContainer width="100%" height={320}>
         <PieChart>
+
           <Pie
             data={data}
             dataKey="value"
             nameKey="name"
-            innerRadius={70}
             outerRadius={110}
-            paddingAngle={4}
-            animationDuration={1800}
             label
           >
-            {data.map((_, index) => (
+            {data.map((_: any, index: number) => (
               <Cell
                 key={index}
                 fill={COLORS[index % COLORS.length]}
@@ -77,19 +47,19 @@ export default function RegionChart({
           </Pie>
 
           <Tooltip
+            formatter={(value: number) =>
+              value.toLocaleString()
+            }
             contentStyle={{
-              borderRadius: 16,
-              border: "none",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+              borderRadius: 12,
             }}
           />
 
-          <Legend
-            verticalAlign="bottom"
-            iconType="circle"
-          />
+          <Legend />
+
         </PieChart>
       </ResponsiveContainer>
-    </motion.div>
+
+    </div>
   );
 }
