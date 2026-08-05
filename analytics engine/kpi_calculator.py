@@ -3,7 +3,6 @@ MetricMind Analytics Engine
 
 KPI Calculator
 """
-
 class KPICalculator:
 
     @staticmethod
