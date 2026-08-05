@@ -484,7 +484,7 @@ export default function Navbar(){
 
               <p className="font-semibold">
 
-                John Doe
+                 JASS
 
               </p>
 
