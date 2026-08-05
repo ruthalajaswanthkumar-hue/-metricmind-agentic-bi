@@ -1,6 +1,6 @@
-from langchain_ollama import OllamaLLM
+ from langchain_ollama import OllamaLLM
 
-llm = OllamaLLM(model="llama3:latest")
+llm = OllamaLLM(model="llama3.2:1b")
 
 
 def generate_recommendation(data):
