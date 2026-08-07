@@ -20,6 +20,18 @@ from semantic_layer.semantic_engine import SemanticEngine
 
 from backend.query_service import QueryService
 from analytics_engine.dashboard_engine import DashboardEngine
+ 
+ 
+from backend.app.routes.dashboard import router as dashboard_router
+from backend.reports import router as reports_router
+from backend.charts_dashboard import router as charts_dashboard_router
+from backend.activity import router as activity_router
+
+from sqlalchemy import text
+from backend.database import engine
+from backend.history import router as history_router
+from backend.filters import router as filter_router
+ 
 
 
 
@@ -29,6 +41,7 @@ dashboard = DashboardEngine()
 
 
 app = FastAPI()
+ 
 
 
 
@@ -50,15 +63,26 @@ app.add_exception_handler(
 
 
 app.add_middleware(RequestMiddleware)
+ 
+app.include_router(dashboard_router)
 
 
 app.include_router(charts_router)
 
 
+app.include_router(reports_router)
+app.include_router(charts_dashboard_router)
+app.include_router(activity_router)
+app.include_router(history_router)
+app.include_router(filter_router)
 
 class ChatRequest(BaseModel):
     question: str
- 
+
+
+
+
+
 @app.post("/chat")
 def chat(request: ChatRequest):
 
@@ -134,13 +158,31 @@ def chat(request: ChatRequest):
 
         print("CLEAN SQL:")
         print(repr(sql))
- 
 
-        # Execute SQL
 
+
+
+
+              # Execute SQL
         result = QueryService.execute_query(sql)
 
+        # Save chat history
+        with engine.connect() as conn:
 
+            conn.execute(
+                text("""
+                    INSERT INTO ChatHistory
+                    (question, generated_sql)
+                    VALUES
+                    (:question, :sql)
+                """),
+                {
+                    "question": request.question,
+                    "sql": sql
+                }
+            )
+
+            conn.commit()
 
         if not result["success"]:
 
@@ -158,7 +200,11 @@ def chat(request: ChatRequest):
         if isinstance(data, list):
 
             data = data[0] if data else {}
- 
+
+
+
+
+
         # Normalize KPI names
 
 
@@ -190,7 +236,10 @@ def chat(request: ChatRequest):
             elif "CUSTOMER" in name:
 
                 data["Customers"] = data[key]
- 
+
+
+
+
 
         # Default values
 
@@ -202,7 +251,12 @@ def chat(request: ChatRequest):
         data.setdefault("Orders",0)
 
         data.setdefault("Customers",0)
- 
+
+
+
+
+
+
         # Dashboard Generation
 
 
@@ -210,7 +264,10 @@ def chat(request: ChatRequest):
             data
         )
 
- 
+
+
+
+
 
         # -----------------------------
         # Chart Data
@@ -271,7 +328,11 @@ def chat(request: ChatRequest):
 
         }
 
- 
+
+
+
+
+
 
         return {
 
@@ -299,7 +360,11 @@ def chat(request: ChatRequest):
 
         }
 
- 
+
+
+
+
+
     except Exception as e:
 
 
@@ -319,7 +384,14 @@ def chat(request: ChatRequest):
 
         }
 
- 
+
+
+
+
+
+
+
+
 @app.get("/")
 def root():
 
@@ -329,7 +401,14 @@ def root():
 
     }
 
- 
+
+
+
+
+
+
+
+
 @app.get("/health")
 def health():
 
