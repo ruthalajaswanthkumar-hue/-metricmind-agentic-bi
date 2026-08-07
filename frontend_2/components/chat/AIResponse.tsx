@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import { motion } from "framer-motion";
 import { FaRobot } from "react-icons/fa";
@@ -101,17 +101,50 @@ dark:border-slate-700
 
         {/* Query */}
 
-        <div className="mb-10">
+        {/* Query Result */}
 
-          <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">
-             Query Result
-          </h3>
+<div className="mb-10">
 
-          <pre className="rounded-xl bg-white p-4 text-sm overflow-auto dark:bg-slate-800">
-            {JSON.stringify(rawData, null, 2)}
-          </pre>
+  <h3 className="mb-5 text-xl font-bold">
+    Query Result
+  </h3>
 
-        </div>
+  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+    {Object.entries(rawData).map(([key, value]) => (
+
+      <div
+        key={key}
+        className="
+        rounded-xl
+        bg-blue-50
+        dark:bg-slate-800
+        p-5
+        shadow
+        "
+      >
+
+        <p className="text-gray-500 text-sm">
+          {key}
+        </p>
+
+        <h2 className="mt-2 text-2xl font-bold text-blue-600">
+
+          {typeof value === "number"
+
+            ? value.toLocaleString()
+
+            : String(value)}
+
+        </h2>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</div>
 
         {/* Insights */}
 
