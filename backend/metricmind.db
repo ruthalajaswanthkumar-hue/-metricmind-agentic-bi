@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS ChatHistory (
+
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    question TEXT NOT NULL,
+
+    generated_sql TEXT NOT NULL,
+
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+
+);
