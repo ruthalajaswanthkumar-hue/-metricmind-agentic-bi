@@ -1,55 +1,63 @@
  "use client";
 
 import {
-  LineChart,
-  Line,
+  ResponsiveContainer,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
-  Tooltip,
-  ResponsiveContainer,
   CartesianGrid,
+  Tooltip,
+  LabelList,
 } from "recharts";
 
-export default function SalesChart({ data }: any) {
+interface Props {
+  data: any[];
+}
+
+export default function RevenueChart({ data }: Props) {
   if (!data || data.length === 0) return null;
 
   return (
     <div className="rounded-2xl bg-white dark:bg-slate-800 p-6 shadow-lg">
 
       <h2 className="mb-5 text-xl font-bold text-gray-900 dark:text-white">
-        📈 Sales Trend
+        📊 Revenue Analysis
       </h2>
 
       <ResponsiveContainer width="100%" height={320}>
-
-        <LineChart data={data}>
+        <BarChart data={data}>
 
           <CartesianGrid strokeDasharray="3 3" />
 
-          <XAxis dataKey="name" />
+          <XAxis dataKey="month" />
 
           <YAxis />
 
           <Tooltip
             formatter={(value: number) =>
-              value.toLocaleString()
+              `₹ ${value.toLocaleString()}`
             }
             contentStyle={{
               borderRadius: 12,
             }}
           />
 
-          <Line
-            type="monotone"
-            dataKey="value"
-            stroke="#22C55E"
-            strokeWidth={4}
-            dot={{ r: 6 }}
-            activeDot={{ r: 8 }}
-          />
+          <Bar
+            dataKey="revenue"
+            fill="#cb64c4"
+            radius={[8, 8, 0, 0]}
+          >
+            <LabelList
+              dataKey="revenue"
+              position="top"
+              formatter={(value: number) =>
+                `₹${(value / 100000).toFixed(1)}L`
+              }
+            />
+          </Bar>
 
-        </LineChart>
-
+        </BarChart>
       </ResponsiveContainer>
 
     </div>
