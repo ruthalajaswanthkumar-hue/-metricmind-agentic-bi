@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import LoginForm from "@/components/loginform";
 import { motion } from "framer-motion";
@@ -304,12 +304,12 @@ export default function LoginPage(){
             className="
             text-3xl
             font-bold
-            text-gray-900
+            text-blue-300
             "
 
           >
 
-            Welcome Back 👋
+            Welcome Back 
 
           </h2>
 
