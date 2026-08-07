@@ -1,431 +1,147 @@
-"use client";
+ "use client";
 
-
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 import HistoryCard from "@/components/history/HistoryCard";
 import HistorySearch from "@/components/history/HistorySearch";
 
-
-
 type HistoryItem = {
-
-  id:number;
-
-  question:string;
-
-  answer:string;
-
-  date:string;
-
-  category:string;
-
+  id: number;
+  question: string;
+  sql: string;
+  time: string;
 };
 
+export default function HistoryPage() {
 
+  const [history, setHistory] = useState<HistoryItem[]>([]);
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
 
+    async function loadHistory() {
 
-export default function HistoryPage(){
+      try {
 
+        const res = await fetch("http://127.0.0.1:8000/history");
 
-  const [history,setHistory] = useState<HistoryItem[]>([
+        const data = await res.json();
 
+        setHistory(data);
 
-    {
-      id:1,
-      question:"Show Revenue",
-      answer:"Revenue increased by 12% this month.",
-      date:"26 Jul 2026",
-      category:"Sales",
-    },
+      } catch (err) {
 
+        console.error("History API Error:", err);
 
-    {
-      id:2,
-      question:"Show Profit",
-      answer:"Profit margin improved by 8%.",
-      date:"25 Jul 2026",
-      category:"Finance",
-    },
+      } finally {
 
+        setLoading(false);
 
-    {
-      id:3,
-      question:"Best Selling Products",
-      answer:"Laptop and Mobile are top selling products.",
-      date:"24 Jul 2026",
-      category:"Products",
-    },
+      }
 
+    }
 
-    {
-      id:4,
-      question:"Monthly Sales",
-      answer:"July sales are higher than June.",
-      date:"23 Jul 2026",
-      category:"Analytics",
-    },
+    loadHistory();
 
+  }, []);
 
-  ]);
+  function deleteHistory(id: number) {
 
-
-
-
-
-  const [search,setSearch] = useState("");
-
-
-
-
-
-
-  function deleteHistory(id:number){
-
-
-    setHistory((prev)=>
-
-      prev.filter(
-        (item)=>item.id!==id
-      )
-
-    );
-
+    setHistory((prev) => prev.filter((item) => item.id !== id));
 
   }
 
+  const filteredHistory = useMemo(() => {
 
+    return history.filter((item) =>
+      item.question.toLowerCase().includes(search.toLowerCase())
+    );
 
-
-
-
-
-  const filteredHistory = history.filter((item)=>
-
-    item.question
-    .toLowerCase()
-    .includes(
-      search.toLowerCase()
-    )
-
-  );
-
-
-
-
-
-
+  }, [history, search]);
 
   const totalQueries = history.length;
 
+  const todayQueries = history.filter((item) => {
 
+    if (!item.time) return false;
 
-  const todayQueries = history.filter(
-    (item)=>item.date==="26 Jul 2026"
-  ).length;
+    const today = new Date().toISOString().slice(0, 10);
 
+    return item.time.toString().startsWith(today);
 
-
-
-  const totalCategories = new Set(
-
-    history.map(
-      (item)=>item.category
-    )
-
-  ).size;
-
-
-
-
-
-
-
-
+  }).length;
 
   return (
 
-
-
-    <main
-
-      className="
-      min-h-screen
-      bg-gray-100
-      p-5
-      sm:p-8
-
-      dark:bg-slate-950
-      "
-
-    >
-
-
-
-
+    <main className="min-h-screen bg-gray-100 dark:bg-slate-950 p-5 sm:p-8">
 
       <motion.div
 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
 
-        initial={{
-          opacity:0,
-          y:30,
-        }}
-
-
-        animate={{
-          opacity:1,
-          y:0,
-        }}
-
-
-        transition={{
-          duration:0.5,
-        }}
-
-
-
-        className="
-        mx-auto
-        max-w-5xl
-        "
+        className="mx-auto max-w-5xl"
 
       >
 
-
-
-
-
-
-
-        {/* Header */}
-
-
-
-
         <div className="mb-8">
 
-
-          <h1
-
-            className="
-            text-3xl
-            font-bold
-            text-gray-900
-
-            dark:text-white
-            "
-
-          >
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
 
             Query History
 
           </h1>
 
+          <p className="mt-2 text-gray-600 dark:text-gray-400">
 
-
-
-
-          <p
-
-            className="
-            mt-2
-            text-gray-600
-
-            dark:text-gray-400
-            "
-
-          >
-
-            View and manage your previous AI business queries.
+            Previous AI queries executed in MetricMind.
 
           </p>
 
-
-
         </div>
 
+        <div className="mb-8 grid gap-4 sm:grid-cols-3">
 
+          <div className="rounded-2xl bg-white dark:bg-slate-900 p-5 shadow-md">
 
+            <p className="text-sm text-gray-500">Total Queries</p>
 
-
-
-
-
-        {/* Stats Cards */}
-
-
-
-
-
-        <div
-
-          className="
-          mb-8
-          grid
-          gap-4
-          sm:grid-cols-3
-          "
-
-        >
-
-
-
-
-          <div
-
-            className="
-            rounded-2xl
-            bg-white
-            p-5
-            shadow-md
-
-            dark:bg-slate-900
-            "
-
-          >
-
-
-            <p className="
-            text-sm
-            text-gray-500
-            dark:text-gray-400
-            ">
-
-              Total Queries
-
-            </p>
-
-
-            <h2 className="
-            mt-2
-            text-3xl
-            font-bold
-            text-blue-600
-            ">
+            <h2 className="mt-2 text-3xl font-bold text-blue-600">
 
               {totalQueries}
 
             </h2>
 
-
-
           </div>
 
+          <div className="rounded-2xl bg-white dark:bg-slate-900 p-5 shadow-md">
 
+            <p className="text-sm text-gray-500">Today's Queries</p>
 
-
-
-
-
-          <div
-
-            className="
-            rounded-2xl
-            bg-white
-            p-5
-            shadow-md
-
-            dark:bg-slate-900
-            "
-
-          >
-
-
-            <p className="
-            text-sm
-            text-gray-500
-            dark:text-gray-400
-            ">
-
-              Today
-
-            </p>
-
-
-
-            <h2 className="
-            mt-2
-            text-3xl
-            font-bold
-            text-green-600
-            ">
+            <h2 className="mt-2 text-3xl font-bold text-green-600">
 
               {todayQueries}
 
             </h2>
 
-
-
           </div>
 
+          <div className="rounded-2xl bg-white dark:bg-slate-900 p-5 shadow-md">
 
+            <p className="text-sm text-gray-500">Database</p>
 
+            <h2 className="mt-2 text-3xl font-bold text-purple-600">
 
-
-
-
-          <div
-
-            className="
-            rounded-2xl
-            bg-white
-            p-5
-            shadow-md
-
-            dark:bg-slate-900
-            "
-
-          >
-
-
-            <p className="
-            text-sm
-            text-gray-500
-            dark:text-gray-400
-            ">
-
-              Categories
-
-            </p>
-
-
-
-            <h2 className="
-            mt-2
-            text-3xl
-            font-bold
-            text-purple-600
-            ">
-
-              {totalCategories}
+              SQLite
 
             </h2>
 
-
-
           </div>
 
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-        {/* Search */}
-
-
 
         <HistorySearch
 
@@ -435,120 +151,54 @@ export default function HistoryPage(){
 
         />
 
+        <div className="mt-6 space-y-5">
 
+          {loading ? (
 
+            <div className="rounded-2xl bg-white dark:bg-slate-900 p-8 text-center">
 
+              Loading history...
 
+            </div>
 
+          ) : filteredHistory.length === 0 ? (
 
+            <div className="rounded-2xl bg-white dark:bg-slate-900 p-8 text-center text-gray-500">
 
+              No history found.
 
-        {/* History List */}
+            </div>
 
+          ) : (
 
-
-
-
-        <div
-
-          className="
-          mt-6
-          space-y-5
-          "
-
-        >
-
-
-
-
-
-          {
-
-            filteredHistory.length===0
-
-
-            ?
-
-
-            (
-
-
-              <div
-
-                className="
-                rounded-2xl
-                bg-white
-                p-8
-                text-center
-                text-gray-500
-                shadow-md
-
-                dark:bg-slate-900
-                dark:text-gray-400
-                "
-
-              >
-
-                No matching history found.
-
-
-              </div>
-
-
-            )
-
-
-
-            :
-
-
-
-            filteredHistory.map((item)=>(
-
+            filteredHistory.map((item: any) => (
 
               <HistoryCard
 
-
                 key={item.id}
 
-
-                item={item}
-
+                item={{
+                  id: item.id,
+                  question: item.question,
+                  answer: item.sql,
+                  date: item.time,
+                  category: "SQL",
+                }}
 
                 onDelete={deleteHistory}
 
-
               />
-
 
             ))
 
-
-          }
-
-
-
-
+          )}
 
         </div>
 
-
-
-
-
-
       </motion.div>
-
-
-
-
-
 
     </main>
 
-
-
   );
-
 
 }
