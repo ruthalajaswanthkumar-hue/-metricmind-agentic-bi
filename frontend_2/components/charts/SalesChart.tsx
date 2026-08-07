@@ -10,14 +10,22 @@ import {
   CartesianGrid,
 } from "recharts";
 
-export default function SalesChart({ data }: any) {
+interface Props {
+  data: any[];
+}
+
+export default function SalesChart({ data }: Props) {
+
   if (!data || data.length === 0) return null;
 
   return (
+
     <div className="rounded-2xl bg-white dark:bg-slate-800 p-6 shadow-lg">
 
       <h2 className="mb-5 text-xl font-bold text-gray-900 dark:text-white">
-        📈 Sales Trend
+
+        📈 Category Revenue
+
       </h2>
 
       <ResponsiveContainer width="100%" height={320}>
@@ -32,7 +40,7 @@ export default function SalesChart({ data }: any) {
 
           <Tooltip
             formatter={(value: number) =>
-              value.toLocaleString()
+              `₹ ${value.toLocaleString()}`
             }
             contentStyle={{
               borderRadius: 12,
@@ -53,5 +61,7 @@ export default function SalesChart({ data }: any) {
       </ResponsiveContainer>
 
     </div>
+
   );
+
 }
