@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -106,7 +106,7 @@ export default function Hero() {
             text-blue-300
             "
           >
-            🚀 AI Powered Analytics Platform
+             AI Powered Analytics Platform
           </span>
 
           <h1
@@ -356,75 +356,72 @@ export default function Hero() {
 
               {/* Users */}
 
-              <motion.div
-                whileHover={{
-                  scale: 1.02,
-                }}
-                className="
-                rounded-2xl
-                bg-gradient-to-r
-                from-blue-600
-                to-indigo-600
-                p-6
-                "
-              >
+              {/* KPI Preview */}
 
-                <h3
-                  className="
-                  text-lg
-                  font-bold
-                  text-white
-                  "
-                >
-                  Active Users
-                </h3>
+<motion.div
+  whileHover={{ scale: 1.02 }}
+  className="
+    rounded-2xl
+    bg-gradient-to-r
+    from-blue-600
+    to-indigo-600
+    p-6
+  "
+>
+  <div className="flex items-center justify-between">
+    <div>
+      <p className="text-sm text-blue-100">
+        Total Revenue
+      </p>
 
-                <h2
-                  className="
-                  mt-3
-                  text-5xl
-                  font-extrabold
-                  text-white
-                  "
-                >
-                  24,580
-                </h2>
+      <h2 className="mt-2 text-4xl font-extrabold text-white">
+        $124.8K
+      </h2>
+    </div>
 
-                <p className="mt-2 text-blue-100">
-                  +18% this month
-                </p>
+    <div className="rounded-xl bg-white/10 p-3">
+      <FaChartLine className="text-2xl text-cyan-300" />
+    </div>
+  </div>
 
-              </motion.div>
+  <p className="mt-3 text-sm text-blue-100">
+    Business performance overview
+  </p>
+</motion.div>
 
-              {/* AI Stats */}
+{/* Business Analytics */}
 
-              <div className="grid grid-cols-2 gap-4">
+<div className="grid grid-cols-2 gap-4">
 
-                <div className="rounded-xl bg-white/10 p-4">
+  <div className="rounded-xl bg-white/10 p-4">
+    <p className="text-sm text-slate-300">
+      Average Order Value
+    </p>
 
-                  <p className="text-sm text-slate-300">
-                    Reports Generated
-                  </p>
+    <h3 className="mt-2 text-2xl font-bold text-white">
+      $248
+    </h3>
 
-                  <h3 className="mt-2 text-2xl font-bold text-white">
-                    12.4K
-                  </h3>
+    <p className="mt-1 text-xs text-green-300">
+      ↑ Positive trend
+    </p>
+  </div>
 
-                </div>
+  <div className="rounded-xl bg-white/10 p-4">
+    <p className="text-sm text-slate-300">
+      Orders Analyzed
+    </p>
 
-                <div className="rounded-xl bg-white/10 p-4">
+    <h3 className="mt-2 text-2xl font-bold text-white">
+      4,820
+    </h3>
 
-                  <p className="text-sm text-slate-300">
-                    Predictions
-                  </p>
+    <p className="mt-1 text-xs text-cyan-300">
+      Dataset records
+    </p>
+  </div>
 
-                  <h3 className="mt-2 text-2xl font-bold text-white">
-                    8.9K
-                  </h3>
-
-                </div>
-
-              </div>
+</div>
 
             </div>
 
