@@ -10,8 +10,7 @@ Transform business data into actionable insights through natural-language intera
 </p>
 
 ---
-
-## 📌 Overview
+##  Overview
 
 **MetricMind** is an AI-powered Business Intelligence platform designed to help users analyze business data without requiring them to manually write SQL queries or navigate complex analytical systems.
 
@@ -40,7 +39,7 @@ MetricMind processes the request, retrieves the required business information, a
 
 ---
 
-# 🎯 Project Goals
+#  Project Goals
 
 The primary goals of MetricMind are:
 
@@ -59,9 +58,9 @@ The primary goals of MetricMind are:
 
 ---
 
-# ✨ Key Features
+#  Key Features
 
-## 🏠 Interactive Landing Page
+##  Interactive Landing Page
 
 The MetricMind landing page provides an introduction to the platform and its capabilities.
 
@@ -82,12 +81,14 @@ Features include:
 Add your screenshot here:
 
 `docs/screenshots/landing-page.png`
+<img width="7688" height="975" alt="Screenshot-2026-08-15-223817" src="https://github.com/user-attachments/assets/24931453-6e56-48dc-a82b-8d34b4b088fa" />
+
 
 ![MetricMind Landing Page](docs/screenshots/landing-page.png)
 
 ---
 
-# 🔐 Authentication & Login
+#  Authentication & Login
 
 MetricMind provides a dedicated login interface before users access the business dashboard.
 
@@ -109,7 +110,7 @@ The login experience includes:
 
 ---
 
-# 📊 Business Intelligence Dashboard
+#  Business Intelligence Dashboard
 
 The dashboard is the central component of MetricMind.
 
@@ -134,7 +135,7 @@ It provides users with a complete overview of business performance through:
 
 ---
 
-# 📌 KPI Analytics
+#  KPI Analytics
 
 The dashboard provides important business performance indicators.
 
@@ -157,7 +158,7 @@ These KPIs provide users with an immediate understanding of business performance
 
 ---
 
-# 💰 Revenue Analysis
+#  Revenue Analysis
 
 MetricMind provides visual revenue analysis to help users understand business performance over time.
 
@@ -176,7 +177,7 @@ The revenue visualization allows users to identify:
 
 ---
 
-# 📈 Sales Analysis
+#  Sales Analysis
 
 The sales analytics module provides visual analysis of sales performance.
 
@@ -196,7 +197,7 @@ Users can analyze:
 
 ---
 
-# 🌍 Regional Analysis
+#  Regional Analysis
 
 MetricMind provides regional business analysis to help users understand how different regions contribute to overall business performance.
 
@@ -215,7 +216,7 @@ Regional analytics can be used to identify:
 
 ---
 
-# 🔎 Interactive Dashboard Filters
+#  Interactive Dashboard Filters
 
 The dashboard includes interactive filters that allow users to narrow their analysis.
 
@@ -236,7 +237,7 @@ The selected filters are sent to the backend, where the corresponding business d
 
 ---
 
-# 🤖 AI Conversational Business Intelligence
+#  AI Conversational Business Intelligence
 
 One of the main capabilities of MetricMind is the AI-powered conversational interface.
 
