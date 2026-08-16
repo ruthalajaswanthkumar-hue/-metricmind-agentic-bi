@@ -77,7 +77,7 @@ Features include:
 - Responsive design
 
 ### Screenshot
-<img width="7688" height="975" alt="Screenshot-2026-08-15-223817" src="https://github.com/user-attachments/assets/511b071f-33c2-421e-abdf-a7ef22e1ecc3" />
+ ![Uploading Screenshot 2026-08-15 224054.png…]()
 <img width="1919" height="735" alt="Screenshot 2026-08-15 223831" src="https://github.com/user-attachments/assets/db4d8ff9-dcae-4fd8-8721-13f2db45d2b8" />
 <img width="1891" height="762" alt="Screenshot 2026-08-15 223840" src="https://github.com/user-attachments/assets/5aab4984-d00c-4e12-b218-653281b452a9" />
 <img width="1913" height="957" alt="Screenshot 2026-08-15 223851" src="https://github.com/user-attachments/assets/0d5f16f4-f13b-4366-915e-01eefc4fa92f" />
