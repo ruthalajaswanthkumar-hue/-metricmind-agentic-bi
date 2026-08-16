@@ -1,352 +1,248 @@
- #  MetricMind – Agentic Semantic BI Engine
- 
-  **Enterprise-grade AI-powered Conversational Business Intelligence Platform**
+ # MetricMind
+## Agentic Semantic Business Intelligence Platform
 
- 
- 
+<p align="center">
 
-#  Project Overview
+**AI-Powered Conversational Business Intelligence Platform**
 
-**MetricMind** is an Enterprise AI-powered Business Intelligence (BI) platform that enables business users to ask questions in natural language and instantly receive accurate analytics, visualizations, and business insights
+Transform business data into actionable insights through natural-language interaction, intelligent analytics, interactive dashboards, and AI-powered business intelligence.
 
-Instead of writing SQL queries manually, users can simply ask:
-
- **"Why did European sales decrease last quarter?"**
-
-MetricMind intelligently:
-
--  Understands the business question
--  Converts Natural Language into SQL
--  Uses a Semantic Layer for governed metrics
--  Retrieves data from Snowflake
--  Generates interactive dashboards
--  Provides AI-generated business insights
+</p>
 
 ---
 
-#  Project Objectives
+## 📌 Overview
 
-- Build an AI-powered Conversational BI Platform
-- Convert Natural Language → SQL
-- Create an Enterprise Semantic Layer
-- Generate Interactive Visualizations
-- Provide Explainable Business Insights
-- Deliver Enterprise Dashboard Experience
-- Build a Modular & Scalable Architecture
+**MetricMind** is an AI-powered Business Intelligence platform designed to help users analyze business data without requiring them to manually write SQL queries or navigate complex analytical systems.
 
----
+The platform combines:
 
-#  System Architecture
-
-```text
-                        User
-                          │
-                          ▼
-                 Next.js Frontend
-                          │
-                          ▼
-                  FastAPI Backend
-                          │
-                          ▼
-             AI Agent (LangChain + Llama)
-                          │
-                          ▼
-          Semantic Layer (dbt + Cube.dev)
-                          │
-                          ▼
-             Snowflake Data Warehouse
-                          │
-                          ▼
-      Analytics Engine & Dashboard Intelligence
-          ├── KPI Generator
-          ├── Metric Processor
-          ├── Business Rule Engine
-          ├── Trend Analyzer
-          ├── Insight Generator
-          ├── Chart Selector
-          └── Response Formatter
-                          │
-                          ▼
-      Interactive Dashboard & Business Insights
-```
-
----
-
-#  Tech Stack
-
-| Category | Technology |
-|----------|------------|
-| Frontend | Next.js, React, TypeScript, Tailwind CSS |
-| Backend | FastAPI, Python, SQLAlchemy, Pydantic |
-| AI | LangChain, Llama 3, Ollama |
-| Semantic Layer | dbt, Cube.dev |
-| Analytics Engine | Python, Pandas, NumPy |
-| Database | Snowflake, SQL |
-| Charts | Recharts |
-| Version Control | Git & GitHub |
-
----
-
-#  Repository Structure
-
-```text
-METRICMIND-agentic-bi/
-│
-├── frontend/                 # Next.js Application
-│
-├── backend/                  # FastAPI APIs
-│
-├── ai-agent/                 # LangChain + Llama
-│
-├── semantic-layer/           # dbt & Cube.dev
-│
-├── analytics-engine/
-│   ├── metrics/
-│   ├── processors/
-│   ├── insights/
-│   ├── charts/
-│   ├── rules/
-│   └── formatter/
-│
-├── database/
-│   ├── schema/
-│   ├── datasets/
-│   ├── queries/
-│   ├── views/
-│   └── er-diagram/
-│
-├── visualization/
-│
-├── docs/
-│   ├── Architecture.md
-│   ├── API_Contract.md
-│   ├── Team_Roles.md
-│   ├── Daily_Status.md
-│   └── Coding_Guidelines.md
-│
-├── assets/
-│
-└── README.md
-```
-
----
-
-#  Team Members
-
-| Role | Member |
-|------|--------|
-|  Team Lead | **Ruthala Jaswanth Kumar** |
-|  Analytics Engine & Dashboard Intelligence | **Ruthala Jaswanth Kumar** |
-|  Frontend Developer |  Neelum Nithusha & Ruthala Jaswanth Kumar|
-|  Backend Developer |  vanshika & Ruthala Jaswanth Kumar |
-|  AI Engineer | Vanshika |
-|  Semantic Layer Engineer | Ruthala Jaswanth Kumar |
-|  Database & Documentation | Neelum Nithusha |
-
----
-
-#  Module Responsibilities
-
-##  Frontend
-
-- Landing Page
-- Login Page
-- Dashboard UI
-- Chat Interface
-- KPI Cards
-- Charts
-- Authentication
-
----
-
-##  Backend
-
-- REST APIs
-- Business Logic
-- Database Connectivity
-- Authentication
-- Error Handling
-- Logging
-- API Documentation
-
----
-
-##  AI Agent
-
-- Prompt Engineering
-- LangChain Integration
-- Llama Integration
-- Natural Language Understanding
-- SQL Generation
-
----
-
-##  Semantic Layer
-
-- Business Metrics
-- Dimensions
-- Cube.dev Models
-- dbt Models
-- Metric Governance
-
----
-
-##  Database
-
-- ER Diagram
-- SQL Schema
-- Data Warehouse
-- Snowflake Integration
-- Sample Datasets
-
----
-
-##  Analytics Engine & Dashboard Intelligence
-
-The Analytics Engine transforms raw SQL results into meaningful business insights.
-
-Responsibilities:
-
-- KPI Calculation
-- Business Rule Processing
-- Trend Analysis
-- Insight Generation
-- Chart Recommendation
+- Artificial Intelligence
+- Conversational Analytics
+- Business Intelligence
+- Data Analytics
+- Semantic Modeling
+- KPI Analysis
+- Interactive Data Visualization
 - Dashboard Intelligence
-- Metric Processing
-- Executive Summary Generation
-- Response Formatting
+
+Users can interact with the platform through an intuitive dashboard and AI chat interface to understand business performance.
+
+For example, instead of manually querying a database, a user can ask:
+
+> **"Which region generated the highest revenue?"**
+
+or:
+
+> **"Show me the revenue trend."**
+
+MetricMind processes the request, retrieves the required business information, analyzes the results, and presents the information through understandable analytics and visualizations.
 
 ---
 
-#  Analytics Engine Workflow
+# 🎯 Project Goals
+
+The primary goals of MetricMind are:
+
+- Build an AI-powered conversational BI platform.
+- Enable users to interact with business data using natural language.
+- Provide an interactive enterprise-style dashboard.
+- Generate meaningful business KPIs.
+- Provide revenue, sales, and regional analysis.
+- Implement interactive data visualization.
+- Provide filtering and analytical exploration.
+- Integrate an AI-powered business chat interface.
+- Build a modular analytics engine.
+- Implement a semantic layer for business metrics.
+- Separate frontend, backend, AI, analytics, and data responsibilities.
+- Provide a scalable architecture for future enterprise BI capabilities.
+
+---
+
+# ✨ Key Features
+
+## 🏠 Interactive Landing Page
+
+The MetricMind landing page provides an introduction to the platform and its capabilities.
+
+Features include:
+
+- Modern responsive UI
+- MetricMind branding
+- AI-powered analytics introduction
+- Animated background elements
+- Interactive buttons
+- Dashboard preview
+- Feature presentation
+- Call-to-action section
+- Responsive design
+
+### Screenshot
+
+Add your screenshot here:
+
+`docs/screenshots/landing-page.png`
+
+![MetricMind Landing Page](docs/screenshots/landing-page.png)
+
+---
+
+# 🔐 Authentication & Login
+
+MetricMind provides a dedicated login interface before users access the business dashboard.
+
+The login experience includes:
+
+- MetricMind branding
+- AI analytics introduction
+- Login form
+- Responsive design
+- Animated UI
+- Authentication state handling
+- Dashboard access protection
+
+### Screenshot
+
+`docs/screenshots/login-page.png`
+
+![MetricMind Login](docs/screenshots/login-page.png)
+
+---
+
+# 📊 Business Intelligence Dashboard
+
+The dashboard is the central component of MetricMind.
+
+It provides users with a complete overview of business performance through:
+
+- KPI cards
+- Revenue analysis
+- Sales analysis
+- Regional analysis
+- Business filters
+- AI-generated insights
+- Recent activity
+- Quick actions
+- Live clock
+- Interactive charts
+
+### Screenshot
+
+`docs/screenshots/dashboard.png`
+
+![MetricMind Dashboard](docs/screenshots/dashboard.png)
+
+---
+
+# 📌 KPI Analytics
+
+The dashboard provides important business performance indicators.
+
+Current KPI categories include:
+
+| KPI | Purpose |
+|---|---|
+| Revenue | Measures overall business revenue |
+| Profit | Represents business profitability |
+| Orders | Measures total number of orders |
+| Customers | Measures customer volume |
+
+These KPIs provide users with an immediate understanding of business performance.
+
+### Screenshot
+
+`docs/screenshots/kpi-cards.png`
+
+![KPI Cards](docs/screenshots/kpi-cards.png)
+
+---
+
+# 💰 Revenue Analysis
+
+MetricMind provides visual revenue analysis to help users understand business performance over time.
+
+The revenue visualization allows users to identify:
+
+- Revenue trends
+- High-performing periods
+- Low-performing periods
+- Overall business performance
+
+### Screenshot
+
+`docs/screenshots/revenue-analysis.png`
+
+![Revenue Analysis](docs/screenshots/revenue-analysis.png)
+
+---
+
+# 📈 Sales Analysis
+
+The sales analytics module provides visual analysis of sales performance.
+
+Users can analyze:
+
+- Category-level performance
+- Sales distribution
+- Business trends
+- High-performing categories
+- Comparative performance
+
+### Screenshot
+
+`docs/screenshots/sales-analysis.png`
+
+![Sales Analysis](docs/screenshots/sales-analysis.png)
+
+---
+
+# 🌍 Regional Analysis
+
+MetricMind provides regional business analysis to help users understand how different regions contribute to overall business performance.
+
+Regional analytics can be used to identify:
+
+- High-performing regions
+- Low-performing regions
+- Regional revenue distribution
+- Business opportunities
+
+### Screenshot
+
+`docs/screenshots/regional-analysis.png`
+
+![Regional Analysis](docs/screenshots/regional-analysis.png)
+
+---
+
+# 🔎 Interactive Dashboard Filters
+
+The dashboard includes interactive filters that allow users to narrow their analysis.
+
+Supported filtering dimensions include:
+
+- Region
+- Category
+- Year
+- Month
+
+The selected filters are sent to the backend, where the corresponding business data is retrieved and returned to the dashboard.
+
+### Screenshot
+
+`docs/screenshots/dashboard-filters.png`
+
+![Dashboard Filters](docs/screenshots/dashboard-filters.png)
+
+---
+
+# 🤖 AI Conversational Business Intelligence
+
+One of the main capabilities of MetricMind is the AI-powered conversational interface.
+
+Users can ask questions about their business data using natural language.
+
+Example:
 
 ```text
-SQL Result
-      │
-      ▼
-Metric Processor
-      │
-      ▼
-Business Rule Engine
-      │
-      ▼
-Insight Generator
-      │
-      ▼
-Chart Selector
-      │
-      ▼
-Response Formatter
-      │
-      ▼
-Dashboard JSON
-      │
-      ▼
-Frontend Dashboard
-```
-
----
-
-#  Git Workflow
-
-Every developer works in a separate feature branch.
-
-```text
-main
-│
-├── develop
-│
-├── feature/frontend
-├── feature/backend
-├── feature/ai-agent
-├── feature/semantic-layer
-├── feature/database
-└── feature/analytics-engine
-```
-
-All code must be submitted through **Pull Requests** before merging.
-
----
-
-#  Development Status
-
-| Module | Status |
-|---------|--------|
-| Repository Setup |  Completed |
-| Frontend |  In Progress |
-| Backend |  In Progress |
-| AI Agent |  In Progress |
-| Semantic Layer |  In Progress |
-| Database |  In Progress |
-| Analytics Engine |  In Progress |
-
----
-
-#  Development Rules
-
-- Create a separate branch for your assigned module.
-- Commit work every day.
-- Use meaningful commit messages.
-- Push before **10:00 PM**.
-- Never push directly to `main`.
-- Submit Pull Requests for review.
-- Update documentation whenever new features are added.
-- Follow project folder structure.
-
----
-
-#  Expected Deliverables
-
-- AI Chat Interface
-- Natural Language → SQL
-- Semantic Layer
-- Snowflake Integration
-- Analytics Engine
-- KPI Recommendation Engine
-- Business Rule Engine
-- Dashboard Intelligence
-- Interactive Charts
-- Executive Business Insights
-- Enterprise Dashboard
-
----
-
-#  Future Scope
-
-Future improvements planned for MetricMind include:
-
-- Predictive Analytics
-- AI Forecasting
-- Anomaly Detection
-- Voice-Based BI Assistant
-- Role-Based Access Control
-- Multi-Language Support
-- Auto KPI Recommendations
-- Real-Time Dashboard Updates
-- AI Executive Reports
-- Smart Dashboard Personalization
-
----
-
-#  Internship Information
-
-**Organization:** Axlero Solutions
-
-**Project:** MetricMind – Agentic Semantic BI Engine
-
-**Duration:** 1 Month
-
----
-
-#  Project Vision
-
-To build a **production-ready AI-powered Conversational Business Intelligence Platform** that enables business users to obtain accurate, explainable, and actionable insights using natural language while ensuring governance, scalability, and enterprise-grade performance.
-
----
-
-#  License
-
-This project is developed as part of the **Axlero Solutions Advanced Data Analytics Internship Program**.
-
-© 2026 Axlero Solutions Internship Team
+Which region generated the highest revenue?
