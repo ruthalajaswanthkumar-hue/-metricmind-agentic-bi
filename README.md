@@ -12,21 +12,21 @@ Transform business data into actionable insights through natural-language intera
 
 ---
 
-## 📌 Overview
+##  Overview
 
 **MetricMind** is an AI-powered Business Intelligence platform designed to help businesses analyze their data without requiring users to manually write SQL queries or navigate complicated analytical systems.
 
 The platform combines:
 
-* 🤖 Artificial Intelligence
-* 💬 Natural-language business queries
-* 📊 Interactive dashboards
-* 📈 Business analytics
-* 🧠 AI-generated insights
-* 🗄️ Structured business databases
-* 🔐 User authentication
-* 🎯 KPI monitoring
-* 📑 Reports and data visualization
+*  Artificial Intelligence
+*  Natural-language business queries
+*  Interactive dashboards
+*  Business analytics
+*  AI-generated insights
+*  Structured business databases
+*  User authentication
+*  KPI monitoring
+*  Reports and data visualization
 
 The main goal of MetricMind is to allow a user to simply ask a business question in natural language and receive meaningful analytical results.
 
@@ -48,7 +48,7 @@ MetricMind is designed to understand the question, identify the relevant busines
 
 ---
 
-# 🎯 Project Objective
+#  Project Objective
 
 Traditional Business Intelligence systems often require users to understand:
 
@@ -101,8 +101,11 @@ Interactive Visualization
 ```
 
 ---
-
-# 🚀 Core Features
+<img width="1919" height="955" alt="Screenshot 2026-08-15 223817" src="https://github.com/user-attachments/assets/ce8c0db2-3bb2-4e51-8f15-fbd3df4b05ea" />
+<img width="1919" height="735" alt="Screenshot 2026-08-15 223831" src="https://github.com/user-attachments/assets/bbd2a723-2a7c-4fd2-b2c0-52750b07445f" />
+<img width="1891" height="762" alt="Screenshot 2026-08-15 223840" src="https://github.com/user-attachments/assets/bc81ab5d-3715-4e96-9d4a-2486651046b0" />
+<img width="1913" height="957" alt="Screenshot 2026-08-15 223851" src="https://github.com/user-attachments/assets/ab352b7b-c0a3-4b35-bcdf-07972c1b4907" />
+#  Core Features
 
 ## 1. AI-Powered Business Analytics
 
@@ -146,7 +149,7 @@ The objective is to make business analytics feel like a conversation rather than
 
 ---
 
-# 📊 Dashboard
+#  Dashboard
 
 The MetricMind dashboard provides a centralized view of business performance.
 
@@ -185,7 +188,7 @@ Users can filter analytical results by:
 
 ---
 
-# 🧠 AI Insights
+#  AI Insights
 
 MetricMind is designed to go beyond simply displaying numbers.
 
@@ -200,8 +203,11 @@ or:
 The objective is to convert raw analytical results into understandable business insights.
 
 ---
-
-# 💬 AI Chat Architecture
+<img width="1919" height="955" alt="Screenshot 2026-08-15 223930" src="https://github.com/user-attachments/assets/89515acc-4bf7-4393-b10c-619c292a93ac" />
+<img width="1919" height="960" alt="Screenshot 2026-08-15 223943" src="https://github.com/user-attachments/assets/82a951b2-1a83-47db-9605-0c14d9fe7036" />
+<img width="1894" height="893" alt="Screenshot 2026-08-15 223958" src="https://github.com/user-attachments/assets/58f75bdb-e7d2-4291-999a-57b0dbfd27ca" />
+<img width="1429" height="770" alt="Screenshot 2026-08-05 065513" src="https://github.com/user-attachments/assets/be19e529-18ad-48bb-96ce-ba74eb89ce21" />
+#  AI Chat Architecture
 
 The conversational analytics flow is designed as follows:
 
@@ -239,10 +245,17 @@ Chart / KPI / Insight
  ↓
 Frontend
 ```
+<img width="1899" height="886" alt="Screenshot 2026-08-15 224016" src="https://github.com/user-attachments/assets/d09d7ec4-2f72-4d3a-8ed1-56cc9a58f396" />
+<img width="1868" height="907" alt="Screenshot 2026-08-15 224028" src="https://github.com/user-attachments/assets/513f8a93-e846-4647-b34c-7d0474feac47" />
+<img width="1895" height="899" alt="Screenshot 2026-08-15 224043" src="https://github.com/user-attachments/assets/fdd1a441-1693-4ee6-bbe1-2db277af80be" />
+<img width="1919" height="958" alt="Screenshot 2026-08-15 224054" src="https://github.com/user-attachments/assets/86d9052d-3853-4c58-aba6-45453fa4bdc6" />
+
+
+
 
 ---
 
-# 🏗️ System Architecture
+#  System Architecture
 
 ```text
                     ┌──────────────────────┐
@@ -299,7 +312,7 @@ Frontend
 
 ---
 
-# 🛠️ Technology Stack
+#  Technology Stack
 
 ## Frontend
 
@@ -379,81 +392,9 @@ The current development environment uses:
 * SQLite
 * SQLAlchemy
 
-The project database is:
+ 
 
-```text
-metricmind.db
-```
-
-The architecture can later be extended to production databases such as:
-
-* PostgreSQL
-* MySQL
-* Snowflake
-
----
-
-# 🗄️ Database Structure
-
-MetricMind uses business-oriented tables.
-
-Typical tables include:
-
-```text
-Regions
-Categories
-Customers
-Products
-Employees
-Date
-Orders
-Sales
-```
-
-The database structure allows the AI system to answer business questions using relationships between different business entities.
-
----
-
-# ⭐ Data Model
-
-A simplified business model can be represented as:
-
-```text
-                    Date
-                     |
-                     |
-Region ---- Orders ---- Customer
-               |
-               |
-            Product
-               |
-            Category
-```
-
-For analytical workloads, the system can use a dimensional model consisting of:
-
-### Fact Table
-
-```text
-Fact Sales / Fact Orders
-```
-
-### Dimension Tables
-
-```text
-Dim Date
-Dim Customer
-Dim Product
-Dim Category
-Dim Region
-Dim Employee
-```
-
-This structure makes analytical queries easier and more efficient.
-
----
-
-# 🔐 Authentication
+#  Authentication
 
 MetricMind includes a basic frontend authentication/session mechanism.
 
@@ -478,7 +419,7 @@ The dashboard checks the login state before displaying protected content.
 
 ---
 
-# 🔑 Login Flow
+#  Login Flow
 
 ```text
 Landing Page
@@ -501,7 +442,7 @@ Dashboard
 
 ---
 
-# 🚪 Logout Flow
+#  Logout Flow
 
 The logout process:
 
@@ -534,37 +475,7 @@ userEmail
 
 ---
 
-# 👤 Profile
-
-The Settings section contains a user profile card.
-
-It displays:
-
-* User avatar
-* User name
-* User email
-* Edit Profile button
-
-The profile information is retrieved from the stored user session.
-
-The flow is:
-
-```text
-Settings
-   |
-   ↓
-Profile Card
-   |
-   ↓
-Edit Profile
-   |
-   ↓
-/profile
-```
-
----
-
-# ⚙️ Settings
+#  Settings
 
 The MetricMind settings section provides several application controls.
 
@@ -593,7 +504,7 @@ The selected theme is stored in browser local storage.
 
 ---
 
-# 🌙 Theme System
+#  Theme System
 
 The application uses a dark/light theme mechanism.
 
@@ -613,7 +524,7 @@ Tailwind's dark mode classes are used throughout the interface.
 
 ---
 
-# 🏠 Landing Page
+#  Landing Page
 
 The MetricMind landing page introduces the platform.
 
@@ -657,68 +568,8 @@ Smoothly scrolls to:
 
 ---
 
-# 🎨 Landing Page Design
-
-The landing page uses:
-
-* Gradient backgrounds
-* Glassmorphism
-* Animated elements
-* Framer Motion
-* Responsive layout
-* AI-themed visual design
-* Interactive buttons
-
-The hero section contains an animated dashboard preview showing sample metrics such as:
-
-```text
-Revenue Growth
-+12%
-
-AI Accuracy
-98%
-
-Active Users
-24,580
-```
-
-These values are currently visual/demo values and should not be interpreted as live production metrics unless connected to the backend.
-
----
-
-# ✨ Features Section
-
-The Features section highlights major MetricMind capabilities.
-
-Current feature concepts include:
-
-### AI Analytics
-
-Generate intelligent insights and predictions using AI-powered analytics.
-
-### Interactive Charts
-
-Visualize business performance using interactive charts.
-
-### Smart Reports
-
-Create business reports and export analytical information.
-
-### Live Dashboard
-
-Monitor KPIs, revenue, sales, and customer growth from one place.
-
-The section is identified by:
-
-```html
-id="features"
-```
-
-so that the Learn More button can smoothly scroll to it.
-
----
-
-# 💬 ChatBox
+ 
+#  ChatBox
 
 The ChatBox is the primary conversational analytics interface.
 
@@ -758,7 +609,7 @@ Chart / Insight
 
 ---
 
-# 📈 AI Response
+#  AI Response
 
 The AI response component can display:
 
@@ -782,944 +633,10 @@ Insight
 Visualization
    ↓
 Recommendation
-```
+ 
 
----
-
-# 📊 Dashboard Charts
-
-MetricMind contains chart-related API functionality.
-
-The backend can provide chart data to the frontend.
-
-Example endpoint:
-
-```text
-GET /dashboard/charts
-```
-
-The frontend uses the returned data to generate dashboard visualizations.
-
----
-
-# 🔌 Backend API
-
-The FastAPI backend contains several API areas.
-
-## Health
-
-```text
-GET /health
-```
-
-Used to check whether the backend is running.
-
----
-
-## Chat
-
-```text
-POST /chat
-```
-
-Used for conversational business analytics.
-
-Example:
-
-```json
-{
-  "message": "What is the total revenue?"
-}
-```
-
-The backend processes the question and returns an analytical response.
-
----
-
-## Charts
-
-```text
-GET /charts
-```
-
-or the dashboard chart route used by the current frontend:
-
-```text
-GET /dashboard/charts
-```
-
-The exact route depends on the currently configured FastAPI router.
-
----
-
-# 🔗 Development Servers
-
-During local development:
-
-### Frontend
-
-```text
-http://localhost:3000
-```
-
-### FastAPI Backend
-
-```text
-http://127.0.0.1:8000
-```
-
-### FastAPI Documentation
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-### Ollama
-
-```text
-http://127.0.0.1:11434
-```
-
----
-
-# ⚙️ Environment Configuration
-
-The backend can use an environment configuration file:
-
-```text
-.env
-```
-
-Example:
-
-```env
-DATABASE_URL=sqlite:///metricmind.db
-```
-
-Additional AI/API configuration can be added depending on the selected model and deployment environment.
-
----
-
-# 📁 Project Structure
-
-A simplified project structure is:
-
-```text
-MetricMind/
-│
-├── frontend/
-│   │
-│   ├── app/
-│   │   ├── dashboard/
-│   │   │   ├── layout.tsx
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── login/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── profile/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── page.tsx
-│   │   └── ...
-│   │
-│   ├── components/
-│   │   │
-│   │   ├── Hero.tsx
-│   │   ├── Features.tsx
-│   │   ├── ChatBox.tsx
-│   │   ├── ChatInput.tsx
-│   │   ├── MessageBubble.tsx
-│   │   ├── AIResponse.tsx
-│   │   ├── TypingAnimation.tsx
-│   │   │
-│   │   ├── loginform.tsx
-│   │   │
-│   │   ├── ProfileCard.tsx
-│   │   ├── LogoutButton.tsx
-│   │   ├── NotificationSettings.tsx
-│   │   └── ThemeToggle.tsx
-│   │
-│   ├── lib/
-│   │   ├── auth.ts
-│   │   └── api.ts
-│   │
-│   ├── public/
-│   │
-│   ├── package.json
-│   ├── next.config.ts
-│   └── tsconfig.json
-│
-│
-├── backend/
-│   │
-│   ├── main.py
-│   ├── ai_agent/
-│   │   ├── text_to_sql.py
-│   │   └── ...
-│   │
-│   ├── routers/
-│   │   ├── health.py
-│   │   ├── chat.py
-│   │   └── charts.py
-│   │
-│   ├── metricmind.db
-│   ├── create_tables.sql
-│   ├── .env
-│   └── requirements.txt
-│
-│
-├── DATASETS/
-│   ├── Category.csv
-│   ├── Customer.csv
-│   ├── Date.csv
-│   ├── Order.csv
-│   ├── Products.csv
-│   ├── Region.csv
-│   └── Sales.csv
-│
-└── README.md
-```
-
-> Folder names may differ slightly depending on the final repository organization.
-
----
-
-# 🧩 Frontend Components
-
-## Hero
-
-Responsible for the landing page hero section.
-
-Main actions:
-
-```text
-Get Started → /login
-
-Learn More → #features
-```
-
----
-
-## Features
-
-Displays MetricMind's major capabilities.
-
----
-
-## LoginForm
-
-Handles:
-
-* Email
-* Password
-* Login validation
-* Session creation
-* Dashboard redirection
-
----
-
-## ProfileCard
-
-Displays:
-
-* User name
-* User email
-* Avatar
-* Edit Profile button
-
----
-
-## LogoutButton
-
-Handles:
-
-* Logout confirmation
-* Session removal
-* Redirect to login
-
----
-
-## NotificationSettings
-
-Controls:
-
-* Email notifications
-* Report alerts
-* AI updates
-
----
-
-## ThemeToggle
-
-Controls:
-
-* Light mode
-* Dark mode
-
----
-
-# 🐍 Backend Structure
-
-The backend is built with FastAPI.
-
-The backend responsibilities are:
-
-```text
-API
- |
- ├── Authentication-related operations
- |
- ├── Chat
- |
- ├── AI Agent
- |
- ├── Text-to-SQL
- |
- ├── Database
- |
- └── Dashboard Data
-```
-
----
-
-# 🤖 AI Agent
-
-The AI Agent is one of the core components of MetricMind.
-
-Its purpose is to bridge the gap between:
-
-```text
-Human Language
-```
-
-and:
-
-```text
-Database Query
-```
-
-Example:
-
-```text
-User:
-"Which region generated the highest revenue?"
-```
-
-The agent identifies:
-
-```text
-Intent:
-Regional revenue comparison
-
-Data:
-Revenue + Region
-
-Operation:
-SUM revenue grouped by region
-
-Sorting:
-Descending
-
-Limit:
-Top region
-```
-
-Then generates an appropriate SQL query.
-
----
-
-# 🧮 Text-to-SQL
-
-Text-to-SQL allows natural-language questions to be converted into SQL.
-
-Example:
-
-```text
-"What are the top 5 products by sales?"
-```
-
-Possible SQL:
-
-```sql
-SELECT
-    product_name,
-    SUM(sales) AS total_sales
-FROM sales
-GROUP BY product_name
-ORDER BY total_sales DESC
-LIMIT 5;
-```
-
-The generated SQL is executed against the business database.
-
----
-
-# 📦 Dataset Pipeline
-
-The data pipeline can be represented as:
-
-```text
-CSV Files
-   ↓
-Data Cleaning
-   ↓
-Data Transformation
-   ↓
-Database Tables
-   ↓
-Analytical Model
-   ↓
-AI Agent
-   ↓
-Dashboard
-```
-
----
-
-# 🧹 Data Preparation
-
-The project datasets can contain information related to:
-
-* Customers
-* Products
-* Categories
-* Regions
-* Orders
-* Sales
-* Dates
-
-Before analytics, data should be:
-
-* Cleaned
-* Validated
-* Standardized
-* Properly typed
-* Related through keys
-* Loaded into the database
-
----
-
-# 📐 Analytical Data Model
-
-A dimensional model can be used for business intelligence.
-
-Example:
-
-```text
-                 Dim_Date
-                    |
-                    |
-Dim_Region ---- Fact_Sales ---- Dim_Product
-                    |
-                    |
-              Dim_Customer
-                    |
-                    |
-              Dim_Category
-```
-
-This enables analytical questions such as:
-
-```text
-Sales by month
-Sales by region
-Sales by category
-Sales by product
-Customer performance
-```
-
----
-
-# 🔄 Complete Data Flow
-
-The complete MetricMind architecture can be summarized as:
-
-```text
-                   USER
-                     |
-                     ↓
-             Natural Language
-                     |
-                     ↓
-              Next.js Frontend
-                     |
-                     ↓
-                FastAPI API
-                     |
-                     ↓
-                AI Agent
-                     |
-                     ↓
-              Intent Analysis
-                     |
-                     ↓
-               Text-to-SQL
-                     |
-                     ↓
-                 Database
-                     |
-                     ↓
-              Query Results
-                     |
-                     ↓
-              AI Interpretation
-                     |
-                     ↓
-          ┌──────────┴──────────┐
-          ↓                     ↓
-       Insights              Charts
-          |                     |
-          └──────────┬──────────┘
-                     ↓
-              Next.js Dashboard
-```
-
----
-
-# 🛠️ Local Development Setup
-
-## Prerequisites
-
-Install:
-
-* Node.js
-* npm
-* Python
-* Git
-* Ollama
-* SQLite
-
-Optional development tools:
-
-* VS Code
-* Postman
-* GitHub
-
----
-
-# 1. Clone the Repository
-
-```bash
-git clone <repository-url>
-```
-
-Then:
-
-```bash
-cd MetricMind
-```
-
----
-
-# 2. Frontend Installation
-
-Go to the frontend directory:
-
-```bash
-cd frontend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open:
-
-```text
-http://localhost:3000
-```
-
----
-
-# 3. Backend Installation
-
-Open another terminal.
-
-Go to backend:
-
-```bash
-cd backend
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv venv
-```
-
-Activate it on Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Start FastAPI:
-
-```bash
-uvicorn main:app --reload
-```
-
-Backend:
-
-```text
-http://127.0.0.1:8000
-```
-
----
-
-# 4. Check Backend
-
-Open:
-
-```text
-http://127.0.0.1:8000/health
-```
-
-The API should return a successful health response.
-
-FastAPI Swagger documentation:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
----
-
-# 5. Start Ollama
-
-Make sure Ollama is running.
-
-Check the configured model:
-
-```bash
-ollama list
-```
-
-Example models used during development:
-
-```text
-gemma3:1b
-llama3.2:1b
-```
-
-The backend can communicate with Ollama through:
-
-```text
-http://127.0.0.1:11434
-```
-
----
-
-# 🔐 Development Authentication
-
-The current frontend authentication mechanism is intended for development/demo purposes.
-
-It uses:
-
-```text
-localStorage
-```
-
-This should not be considered production-grade authentication.
-
-For production, the project should use:
-
-* Secure HTTP-only cookies
-* Server-side sessions or JWT
-* Password hashing
-* Database-backed users
-* Proper authentication APIs
-* Role-based authorization
-
----
-
-# 🧪 Testing the Application
-
-## Landing Page
-
-Open:
-
-```text
-http://localhost:3000
-```
-
-Verify:
-
-* Hero loads
-* Get Started works
-* Learn More scrolls to Features
-* Animations work
-
----
-
-## Login
-
-Open:
-
-```text
-http://localhost:3000/login
-```
-
-Verify:
-
-* Email field
-* Password field
-* Login button
-* Validation
-* Dashboard redirect
-
----
-
-## Dashboard
-
-Verify:
-
-* Dashboard loads
-* KPIs appear
-* Charts appear
-* Filters work
-* Chat works
-
----
-
-## Settings
-
-Verify:
-
-* Profile information
-* Notification toggles
-* Theme toggle
-* Edit Profile
-* Logout
-
----
-
-## Logout
-
-Verify:
-
-```text
-Logout
- ↓
-Session deleted
- ↓
-Login page
-```
-
-Then manually open:
-
-```text
-/dashboard
-```
-
-The application should redirect an unauthenticated user to:
-
-```text
-/login
-```
-
----
-
-# 🐛 Common Development Issues
-
-## Frontend cannot connect to backend
-
-Check:
-
-```text
-Frontend:
-http://localhost:3000
-
-Backend:
-http://127.0.0.1:8000
-```
-
-Also verify FastAPI CORS configuration.
-
----
-
-## 500 Internal Server Error
-
-Check the FastAPI terminal.
-
-Common causes include:
-
-* Database connection failure
-* Missing table
-* Incorrect SQL
-* AI model unavailable
-* Invalid API request
-
----
-
-## Database table does not exist
-
-Verify that:
-
-```text
-metricmind.db
-```
-
-exists and that the required tables have been created.
-
----
-
-## AI model connection refused
-
-Make sure Ollama is running:
-
-```text
-http://127.0.0.1:11434
-```
-
-and verify:
-
-```bash
-ollama list
-```
-
----
-
-# 📈 Development Roadmap
-
-MetricMind was developed progressively.
-
-## Phase 1 — Project Foundation
-
-```text
-Project architecture
-Frontend setup
-Backend setup
-Database setup
-Basic UI
-```
-
----
-
-## Phase 2 — Real KPIs
-
-Implemented dashboard KPI functionality.
-
-Examples:
-
-```text
-Revenue
-Sales
-Orders
-Customers
-```
-
----
-
-## Phase 3 — Real Charts
-
-Connect dashboard charts to actual database data.
-
-Examples:
-
-```text
-Sales trends
-Regional performance
-Category performance
-```
-
----
-
-## Phase 4 — AI Insights
-
-Connect the AI agent to real database information.
-
-Flow:
-
-```text
-Question
- ↓
-AI
- ↓
-SQL
- ↓
-Database
- ↓
-Insight
-```
-
----
-
-## Phase 5 — Dashboard Filters
-
-Implement filters such as:
-
-```text
-Region
-Category
-Date
-```
-
----
-
-## Phase 6 — Recent Orders
-
-Add:
-
-```text
-Recent orders
-Customer
-Product
-Amount
-Date
-Status
-```
-
----
-
-## Phase 7 — Export
-
-Allow users to export:
-
-* Reports
-* Tables
-* Dashboard data
-* Analytical results
-
-Possible formats:
-
-```text
-CSV
-Excel
-PDF
-```
-
----
-
-## Phase 8 — Live Updates
-
-Introduce live or near-real-time dashboard updates.
-
-Possible technologies:
-
-* WebSockets
-* Server-Sent Events
-* Polling
-* Event-driven updates
-
----
-
-# 🚀 Future Improvements
+  
+#  Future Improvements
 
 MetricMind can be expanded with:
 
@@ -1770,7 +687,7 @@ MetricMind can be expanded with:
 
 ---
 
-# 🔒 Production Security Considerations
+#  Production Security Considerations
 
 Before deploying MetricMind to production, the following should be implemented:
 
@@ -1794,7 +711,7 @@ A validation layer should verify that generated queries are safe before executio
 
 ---
 
-# 🌐 Production Architecture
+#  Production Architecture
 
 A possible production architecture:
 
@@ -1829,7 +746,7 @@ A possible production architecture:
 
 ---
 
-# 📊 Example Business Questions
+#  Example Business Questions
 
 MetricMind should eventually support questions such as:
 
@@ -1891,7 +808,7 @@ A business user should be able to enter MetricMind and do the following:
 
 ---
 
-# 🏆 Project Value
+#  Project Value
 
 MetricMind combines several modern technologies into a single Business Intelligence platform.
 
@@ -1914,7 +831,7 @@ It demonstrates concepts including:
 
 ---
 
-# 📚 Learning Outcomes
+#  Learning Outcomes
 
 Developing MetricMind provides practical experience in:
 
@@ -1971,32 +888,7 @@ Business Insights
 
 ---
 
-# 📌 Current Project Status
-
-MetricMind is currently in active development.
-
-### Implemented / Developed
-
-* Landing page
-* Hero section
-* Features section
-* Responsive UI
-* Animated UI
-* Login page
-* Basic session management
-* Dashboard
-* Settings
-* Profile card
-* Edit Profile navigation
-* Logout
-* Theme toggle
-* Notification settings
-* Chat interface
-* FastAPI backend
-* Database integration
-* Dashboard APIs
-* AI/LLM development environment
-
+ 
 ### In Development / Further Integration
 
 * Complete production authentication
@@ -2011,7 +903,7 @@ MetricMind is currently in active development.
 
 ---
 
-# 👨‍💻 Development Philosophy
+#  Development Philosophy
 
 MetricMind follows the principle:
 
@@ -2023,28 +915,12 @@ The goal is to create an **AI-powered business intelligence assistant** that all
 
 ---
 
-# 📄 License
+#  License
 
 This project is developed as an academic/project implementation.
 
 License information can be added here when the final repository licensing decision is made.
 
 ---
+\*
 
-# ⭐ MetricMind
-
-**AI-Powered Conversational Business Intelligence**
-
-```text
-Business Data
-      ↓
-Artificial Intelligence
-      ↓
-Analytics
-      ↓
-Insights
-      ↓
-Better Decisions
-```
-
-**Built to make Business Intelligence simpler, smarter, and more accessible.**
