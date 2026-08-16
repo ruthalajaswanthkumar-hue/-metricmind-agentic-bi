@@ -77,14 +77,10 @@ Features include:
 - Responsive design
 
 ### Screenshot
-
-Add your screenshot here:
-
-`docs/screenshots/landing-page.png`
-<img width="7688" height="975" alt="Screenshot-2026-08-15-223817" src="https://github.com/user-attachments/assets/24931453-6e56-48dc-a82b-8d34b4b088fa" />
-
-
-![MetricMind Landing Page](docs/screenshots/landing-page.png)
+<img width="7688" height="975" alt="Screenshot-2026-08-15-223817" src="https://github.com/user-attachments/assets/511b071f-33c2-421e-abdf-a7ef22e1ecc3" />
+<img width="1919" height="735" alt="Screenshot 2026-08-15 223831" src="https://github.com/user-attachments/assets/db4d8ff9-dcae-4fd8-8721-13f2db45d2b8" />
+<img width="1891" height="762" alt="Screenshot 2026-08-15 223840" src="https://github.com/user-attachments/assets/5aab4984-d00c-4e12-b218-653281b452a9" />
+<img width="1913" height="957" alt="Screenshot 2026-08-15 223851" src="https://github.com/user-attachments/assets/0d5f16f4-f13b-4366-915e-01eefc4fa92f" />
 
 ---
 
@@ -101,12 +97,8 @@ The login experience includes:
 - Animated UI
 - Authentication state handling
 - Dashboard access protection
+<img width="1429" height="770" alt="Screenshot 2026-08-05 065513" src="https://github.com/user-attachments/assets/bd312fd8-edb2-4d4a-bb13-815057bd1dbf" />
 
-### Screenshot
-
-`docs/screenshots/login-page.png`
-
-![MetricMind Login](docs/screenshots/login-page.png)
 
 ---
 
@@ -127,12 +119,9 @@ It provides users with a complete overview of business performance through:
 - Live clock
 - Interactive charts
 
-### Screenshot
+ <img width="1919" height="955" alt="Screenshot 2026-08-15 223930" src="https://github.com/user-attachments/assets/b2a65bca-572c-49ca-8f50-f3c34dbb1993" />
 
-`docs/screenshots/dashboard.png`
-
-![MetricMind Dashboard](docs/screenshots/dashboard.png)
-
+ <img width="1894" height="893" alt="Screenshot 2026-08-15 223958" src="https://github.com/user-attachments/assets/8563474b-9a73-44a1-ba4d-92b5fa45de47" />
 ---
 
 #  KPI Analytics
@@ -150,11 +139,7 @@ Current KPI categories include:
 
 These KPIs provide users with an immediate understanding of business performance.
 
-### Screenshot
-
-`docs/screenshots/kpi-cards.png`
-
-![KPI Cards](docs/screenshots/kpi-cards.png)
+ 
 
 ---
 
@@ -169,12 +154,6 @@ The revenue visualization allows users to identify:
 - Low-performing periods
 - Overall business performance
 
-### Screenshot
-
-`docs/screenshots/revenue-analysis.png`
-
-![Revenue Analysis](docs/screenshots/revenue-analysis.png)
-
 ---
 
 #  Sales Analysis
@@ -188,12 +167,7 @@ Users can analyze:
 - Business trends
 - High-performing categories
 - Comparative performance
-
-### Screenshot
-
-`docs/screenshots/sales-analysis.png`
-
-![Sales Analysis](docs/screenshots/sales-analysis.png)
+ 
 
 ---
 
@@ -207,12 +181,9 @@ Regional analytics can be used to identify:
 - Low-performing regions
 - Regional revenue distribution
 - Business opportunities
+  <img width="1919" height="960" alt="Screenshot 2026-08-15 223943" src="https://github.com/user-attachments/assets/89868415-9276-486b-befb-d18c42293f00" />
+  <img width="1894" height="893" alt="Screenshot 2026-08-15 223958" src="https://github.com/user-attachments/assets/34fdd971-3aa7-43e7-95f7-ebc67c7212a8" />
 
-### Screenshot
-
-`docs/screenshots/regional-analysis.png`
-
-![Regional Analysis](docs/screenshots/regional-analysis.png)
 
 ---
 
@@ -229,11 +200,6 @@ Supported filtering dimensions include:
 
 The selected filters are sent to the backend, where the corresponding business data is retrieved and returned to the dashboard.
 
-### Screenshot
-
-`docs/screenshots/dashboard-filters.png`
-
-![Dashboard Filters](docs/screenshots/dashboard-filters.png)
 
 ---
 
@@ -243,7 +209,11 @@ One of the main capabilities of MetricMind is the AI-powered conversational inte
 
 Users can ask questions about their business data using natural language.
 
-Example:
+ <img width="1899" height="886" alt="Screenshot 2026-08-15 224016" src="https://github.com/user-attachments/assets/7e6d8a67-dda8-4a19-8211-0ab61af28a0d" />
+ ![Uploading Screenshot 2026-08-15 224028.png…]()
+ ![Uploading Screenshot 2026-08-15 224043.png…]()
+ ![Uploading Screenshot 2026-08-15 224054.png…]()
 
-```text
-Which region generated the highest revenue?
+
+
+
